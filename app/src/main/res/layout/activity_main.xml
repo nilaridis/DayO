@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundColor"
@@ -19,8 +18,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="16dp"/>
 
-
-
     <ImageView
         android:id="@+id/logoLine"
         android:layout_width="0dp"
@@ -30,35 +27,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="10dp" />
-
-    <TextView
-        android:id="@+id/welcomeText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Good Morning👋"
-        android:textColor="@color/darkColor"
-        android:textSize="16sp"
-        android:textStyle="normal"
-        app:layout_constraintTop_toBottomOf="@id/logoLine"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"/>
-
-        />
-
-    <TextView
-        android:id="@+id/welcomeText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sun's out-Let's make the most of it"
-        android:textColor="@color/lightColor"
-        android:textSize="16sp"
-        android:textStyle="normal"
-        app:layout_constraintTop_toBottomOf="@id/welcomeText"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"/>
-
 
     <ImageButton
         android:id="@+id/profileButton"
@@ -70,7 +38,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="16dp"/>
 
-
     <ImageButton
         android:id="@+id/notificationButton"
         android:layout_width="48dp"
@@ -81,186 +48,280 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_margin="16dp"/>
 
-
-    <TextView
-        android:id="@+id/ourselection"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="We picked this for you👇"
-        android:textColor="@color/darkColor"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/welcomeText2" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/activityCard"
+    <!-- Scrollable Περιεχόμενο -->
+    <ScrollView
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        app:cardCornerRadius="36dp"
-        app:cardElevation="6dp"
-        app:layout_constraintTop_toBottomOf="@id/ourselection"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/logoLine"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:padding="16dp"
-            android:background="@color/darkColor">
-
-            <ImageView
-                android:id="@+id/activityImage"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/exampleimage" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="16dp">
 
             <TextView
-                android:id="@+id/activityInfo"
+                android:id="@+id/welcomeText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ιππασία στο βουνό\nΏρα: 10:00 - 12:00\nΤιμή: 25€"
+                android:text="Good Morning👋"
+                android:textColor="@color/darkColor"
                 android:textSize="16sp"
-                android:textColor="@color/white"
-                android:layout_marginStart="16dp"
-                android:layout_gravity="center" />
+                android:layout_marginTop="16dp"/>
 
-                <Button
-                    android:id="@+id/bookNowButton"
-                    android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/welcomeText2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sun's out-Let's make the most of it"
+                android:textColor="@color/lightColor"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"/>
+
+            <TextView
+                android:id="@+id/ourselection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="We picked this for you👇"
+                android:textColor="@color/darkColor"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="12dp"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/activityCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="36dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Book now"
-                    android:layout_marginTop="2dp"
-                    android:layout_gravity="center_horizontal"
-                    android:backgroundTint="@color/backgroundColor"
-                    android:textColor="@color/lightColor" />
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:background="@color/darkColor">
 
-            </LinearLayout>
+                    <ImageView
+                        android:id="@+id/activityImage"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/exampleimage" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginStart="16dp">
+
+                        <TextView
+                            android:id="@+id/activityInfo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ιππασία στο βουνό\nΏρα: 10:00 - 12:00\nΤιμή: 25€"
+                            android:textSize="16sp"
+                            android:textColor="@color/white" />
+
+                        <Button
+                            android:id="@+id/bookNowButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Book now"
+                            android:layout_marginTop="4dp"
+                            android:backgroundTint="@color/backgroundColor"
+                            android:textColor="@color/lightColor" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/CategoryChoice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="What do you feel like doing?"
+                android:textColor="@color/darkColor"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"/>
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:rowCount="2"
+                android:layout_marginTop="10dp">
 
 
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="5dp"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="6dp">
 
+                    <RelativeLayout
+                        android:id="@+id/livemusic"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/darkColor">
 
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/livemusic" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="5dp"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="6dp">
+
+                    <RelativeLayout
+                        android:id="@+id/natureoutdoors"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/darkColor">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/natureoutdoors" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="5dp"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="6dp">
+
+                    <RelativeLayout
+                        android:id="@+id/artcalture"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/darkColor">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/artculture" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="5dp"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="6dp">
+
+                    <RelativeLayout
+                        android:id="@+id/adrenalinerush"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/darkColor">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/adrenalinerush" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+            </GridLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="130dp"
+                android:layout_marginBottom="16dp"
+                android:background="@android:color/transparent" />
         </LinearLayout>
+    </ScrollView>
 
-</androidx.cardview.widget.CardView>
 
-    <TextView
-        android:id="@+id/CategoryChoice"
-        android:layout_width="wrap_content"
+    <FrameLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="What do you feel like doing?"
-        android:textColor="@color/darkColor"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/activityCard"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="20dp"/>
+        android:background="@color/backgroundColor">
 
-   <GridLayout
-       android:layout_width="0dp"
-       android:layout_height="wrap_content"
-       app:layout_constraintStart_toStartOf="parent"
-       app:layout_constraintEnd_toEndOf="parent"
-       app:layout_constraintTop_toBottomOf="@+id/CategoryChoice"
-       android:layout_margin="10dp"
-       android:columnCount="2"
-       android:rowCount="2">
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="36dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="#CCFFFFFF"
+        android:layout_gravity="center"
+        android:layout_margin="16dp">
 
-       <androidx.cardview.widget.CardView
-           android:layout_width="0dp"
-           android:layout_height="wrap_content"
-           app:cardCornerRadius="15dp"
-           android:layout_rowWeight="1"
-           android:layout_columnWeight="1"
-           app:cardElevation="6dp"
-           android:layout_margin="5dp">
-           <RelativeLayout
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:background="@color/darkColor">
-               <ImageView
-                   android:layout_width="wrap_content"
-                   android:layout_height="120dp"
-                   android:scaleType="centerCrop"
-                   android:src="@drawable/livemusic">
-               </ImageView>
-           </RelativeLayout>
-       </androidx.cardview.widget.CardView>
+        <LinearLayout
+            android:id="@+id/bottomNavigationBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@color/darkColor"
+            android:padding="12dp">
 
-       <androidx.cardview.widget.CardView
-           android:layout_width="0dp"
-           android:layout_height="wrap_content"
-           app:cardCornerRadius="15dp"
-           android:layout_rowWeight="1"
-           android:layout_columnWeight="1"
-           app:cardElevation="6dp"
-           android:layout_margin="5dp">
-           <RelativeLayout
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:background="@color/darkColor">
-               <ImageView
-                   android:layout_width="wrap_content"
-                   android:layout_height="120dp"
-                   android:scaleType="centerCrop"
-                   android:src="@drawable/natureoutdoors">
-               </ImageView>
-           </RelativeLayout>
-       </androidx.cardview.widget.CardView>
+        <ImageButton
+            android:id="@+id/nav_home"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:src="@drawable/home"
+            android:layout_marginEnd="16dp"/>
 
-       <androidx.cardview.widget.CardView
-           android:layout_width="0dp"
-           android:layout_height="wrap_content"
-           app:cardCornerRadius="15dp"
-           android:layout_rowWeight="1"
-           android:layout_columnWeight="1"
-           app:cardElevation="6dp"
-           android:layout_margin="5dp">
-           <RelativeLayout
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:background="@color/darkColor">
-               <ImageView
-                   android:layout_width="wrap_content"
-                   android:layout_height="120dp"
-                   android:scaleType="centerCrop"
-                   android:src="@drawable/artculture">
-               </ImageView>
-           </RelativeLayout>
-       </androidx.cardview.widget.CardView>
+            <ImageButton
+                android:id="@+id/nav_search"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="@android:color/transparent"
+                android:src="@drawable/search"
+                android:layout_marginHorizontal="16dp"/>
 
-       <androidx.cardview.widget.CardView
-           android:layout_width="0dp"
-           android:layout_height="wrap_content"
-           app:cardCornerRadius="15dp"
-           android:layout_rowWeight="1"
-           android:layout_columnWeight="1"
-           app:cardElevation="6dp"
-           android:layout_margin="5dp">
-           <RelativeLayout
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:background="@color/darkColor">
-               <ImageView
-                   android:layout_width="wrap_content"
-                   android:layout_height="120dp"
-                   android:scaleType="centerCrop"
-                   android:src="@drawable/adrenalinerush">
-               </ImageView>
-           </RelativeLayout>
-       </androidx.cardview.widget.CardView>
-   </GridLayout>
+                <ImageButton
+                    android:id="@+id/nav_match"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/match"
+                    android:layout_marginHorizontal="16dp"/>
+
+                <ImageButton
+                    android:id="@+id/nav_events"
+                    android:layout_width="-0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/calendar"
+                    android:layout_margin="16dp"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </FrameLayout>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
