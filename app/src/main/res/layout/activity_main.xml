@@ -48,7 +48,6 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_margin="16dp"/>
 
-    <!-- Scrollable Περιεχόμενο -->
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -92,53 +91,7 @@
                 android:textStyle="bold"
                 android:layout_marginTop="12dp"/>
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/activityCard"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                app:cardCornerRadius="36dp"
-                app:cardElevation="6dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:padding="16dp"
-                    android:background="@color/darkColor">
-
-                    <ImageView
-                        android:id="@+id/activityImage"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/exampleimage" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_marginStart="16dp">
-
-                        <TextView
-                            android:id="@+id/activityInfo"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Ιππασία στο βουνό\nΏρα: 10:00 - 12:00\nΤιμή: 25€"
-                            android:textSize="16sp"
-                            android:textColor="@color/white" />
-
-                        <Button
-                            android:id="@+id/bookNowButton"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Book now"
-                            android:layout_marginTop="4dp"
-                            android:backgroundTint="@color/backgroundColor"
-                            android:textColor="@color/lightColor" />
-                    </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
+            <include layout="@layout/activity_card" />
 
             <TextView
                 android:id="@+id/CategoryChoice"
@@ -252,76 +205,11 @@
                 android:layout_marginBottom="16dp"
                 android:background="@android:color/transparent" />
         </LinearLayout>
+
     </ScrollView>
 
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:background="@color/backgroundColor">
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:cardCornerRadius="36dp"
-            app:cardElevation="4dp"
-            app:cardBackgroundColor="#CCFFFFFF"
-        android:layout_gravity="center"
-        android:layout_margin="16dp">
-
-        <LinearLayout
-            android:id="@+id/bottomNavigationBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:background="@color/darkColor"
-            android:padding="12dp">
-
-        <ImageButton
-            android:id="@+id/nav_home"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            android:src="@drawable/home"
-            android:layout_marginEnd="16dp"/>
-
-            <ImageButton
-                android:id="@+id/nav_search"
-                android:layout_width="0dp"
-                android:layout_height="48dp"
-                android:layout_weight="1"
-                android:background="@android:color/transparent"
-                android:src="@drawable/search"
-                android:layout_marginHorizontal="16dp"/>
-
-                <ImageButton
-                    android:id="@+id/nav_match"
-                    android:layout_width="0dp"
-                    android:layout_height="48dp"
-                    android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/match"
-                    android:layout_marginHorizontal="16dp"/>
-
-                <ImageButton
-                    android:id="@+id/nav_events"
-                    android:layout_width="-0dp"
-                    android:layout_height="48dp"
-                    android:layout_weight="1"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/calendar"
-                    android:layout_margin="16dp"/>
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-    </FrameLayout>
+    <include layout="@layout/activity_navigationbar" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
