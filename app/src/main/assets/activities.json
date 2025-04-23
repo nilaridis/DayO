@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Live Jazz Night",
+    "category": "LIVE_MUSIC",
+    "description": "Enjoy a relaxing evening with live jazz music at a cozy bar in the city center.",
+    "location": "Thessaloniki City Center",
+    "pricePerPerson": 15.0,
+    "duration": 120,
+    "distance": 1.5
+  },
+  {
+    "name": "Hiking at Seich Sou Forest",
+    "category": "NATURE_OUTDOORS",
+    "description": "Explore the natural beauty of the Seich Sou forest with a guided hiking tour.",
+    "location": "Seich Sou Forest, Thessaloniki",
+    "pricePerPerson": 10.0,
+    "duration": 180,
+    "distance": 8.0
+  },
+  {
+    "name": "Visit the Archaeological Museum",
+    "category": "ART_CULTURE",
+    "description": "Discover ancient artifacts and learn about the rich history of Thessaloniki at the Archaeological Museum.",
+    "location": "Archaeological Museum of Thessaloniki",
+    "pricePerPerson": 12.0,
+    "duration": 90,
+    "distance": 2.0
+  },
+  {
+    "name": "Ziplining Adventure at Adventure Park",
+    "category": "ADRENALINE_RUSH",
+    "description": "Experience the thrill of ziplining over the park's breathtaking scenery.",
+    "location": "Adventure Park near Thessaloniki",
+    "pricePerPerson": 25.0,
+    "duration": 60,
+    "distance": 12.0
+  },
+  {
+    "name": "Photography Walk by the Waterfront",
+    "category": "NATURE_OUTDOORS",
+    "description": "Capture stunning views of the Thermaic Gulf and iconic landmarks on a guided photography walk.",
+    "location": "Thessaloniki Waterfront",
+    "pricePerPerson": 20.0,
+    "duration": 120,
+    "distance": 3.0
+  }
+]

@@ -50,6 +50,8 @@ dependencies {
     implementation(libs.lifecycle.viewmodel.ktx)
     implementation(libs.lifecycle.runtime.ktx)
     implementation("com.google.code.gson:gson:2.10.1")
+    kapt("androidx.room:room-compiler:2.5.1")
+    implementation("androidx.sqlite:sqlite:2.3.1")
 
     // Android Compose
     implementation(libs.activity.compose)
