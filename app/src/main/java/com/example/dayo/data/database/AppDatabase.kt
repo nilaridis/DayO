@@ -12,6 +12,8 @@ import kotlinx.coroutines.*
 @TypeConverters(CategoryConverter::class)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun activityDao(): ActivityDao
+    abstract fun favoriteDao(): FavoriteDao
+    abstract fun userDao(): UserDao
 
     companion object {
         @Volatile
