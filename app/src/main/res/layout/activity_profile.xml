@@ -62,7 +62,7 @@
       android:orientation="vertical"
       android:padding="16dp">
 
-    <!-- Scrollable Περιεχόμενο -->
+    <!-- Scrollable -->
     <TextView
         android:id="@+id/userName"
         android:layout_width="wrap_content"
@@ -111,7 +111,18 @@
           android:textColor="@color/darkColor"
           android:layout_gravity="end"
           android:paddingTop="4dp"/>
+
     </LinearLayout>
+
+    <Button
+        android:id="@+id/EditProfileButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit Profile"
+        android:backgroundTint="@color/darkColor"
+        android:textColor="@color/white"
+        android:layout_margin="8dp"
+       android:layout_gravity="center_horizontal"/>
 
 
 
@@ -121,6 +132,8 @@
         android:layout_marginBottom="16dp"
         android:background="@android:color/transparent" />
   </LinearLayout>
+
+
   </ScrollView>
 
   <include layout="@layout/activity_navigationbar" />
