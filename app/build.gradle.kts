@@ -19,6 +19,10 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    kotlinOptions {
+        jvmTarget = "11" // Θέσε το JVM target στην έκδοση 11
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
