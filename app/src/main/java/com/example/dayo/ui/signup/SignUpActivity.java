@@ -20,21 +20,10 @@ public class SignUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        // ΔΟΚΙΜΗ: Εισαγωγή χρήστη στη βάση δεδομένων
-        User user = new User();
-        user.setEmail("test@example.com");
-        user.setName("TestUser");
-        user.setPassword("123456");
-
-        new Thread(() -> {
-            DatabaseInstance.getInstance(this).userDao().insertUser(user);
-            Log.d("Database Test", "User added to database!");
-        }).start();
-
         EditText emailEditText = findViewById(R.id.et_email);
         EditText passwordEditText = findViewById(R.id.et_password);
         EditText nameEditText = findViewById(R.id.et_username);
-        TextView signUpButton = findViewById(R.id.tv_create_account);
+        Button signUpButton = findViewById(R.id.btn_create_account);
 
         signUpButton.setOnClickListener(v -> {
             String email = emailEditText.getText().toString().trim();
