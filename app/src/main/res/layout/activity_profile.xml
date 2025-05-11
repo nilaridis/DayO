@@ -9,7 +9,7 @@
     tools:context=".MainActivity">
   <ImageView
       android:id="@+id/logoImage"
-      android:layout_width="wrap_content"
+      android:layout_width="240dp"
       android:layout_height="wrap_content"
       android:src="@drawable/logo"
       app:layout_constraintTop_toTopOf="parent"
@@ -31,9 +31,12 @@
       android:id="@+id/profileButton"
       android:layout_width="48dp"
       android:layout_height="48dp"
+      android:padding="8dp"
+      android:scaleType="fitCenter"
       android:background="@android:color/transparent"
       android:src="@drawable/profil"
-      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintTop_toTopOf="@id/logoImage"
+      app:layout_constraintBottom_toBottomOf="@id/logoImage"
       app:layout_constraintEnd_toEndOf="parent"
       android:layout_margin="16dp"/>
 
@@ -41,10 +44,13 @@
       android:id="@+id/notificationButton"
       android:layout_width="48dp"
       android:layout_height="48dp"
+      android:padding="8dp"
       android:src="@drawable/notifications"
       android:background="@android:color/transparent"
+      android:scaleType="fitCenter"
+      app:layout_constraintTop_toTopOf="@id/logoImage"
+      app:layout_constraintBottom_toBottomOf="@id/logoImage"
       app:layout_constraintStart_toStartOf="parent"
-      app:layout_constraintTop_toTopOf="parent"
       android:layout_margin="16dp"/>
 
   <ScrollView
@@ -90,13 +96,20 @@
         android:textSize="18sp"
         android:paddingTop="16dp"/>
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        android:background="@android:color/transparent">
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@color/lightColor"
-        android:padding="8dp"
-        android:layout_marginBottom="8dp">
+        android:padding="8dp">
 
       <include layout="@layout/activity_card" />
 
@@ -112,7 +125,7 @@
           android:layout_gravity="end"
           android:paddingTop="4dp"/>
     </LinearLayout>
-
+    </androidx.cardview.widget.CardView>
 
 
     <View

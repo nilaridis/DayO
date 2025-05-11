@@ -10,7 +10,7 @@
 
     <ImageView
         android:id="@+id/logoImage"
-        android:layout_width="wrap_content"
+        android:layout_width="240dp"
         android:layout_height="wrap_content"
         android:src="@drawable/logo"
         app:layout_constraintTop_toTopOf="parent"
@@ -32,9 +32,12 @@
         android:id="@+id/profileButton"
         android:layout_width="48dp"
         android:layout_height="48dp"
+        android:padding="8dp"
+        android:scaleType="fitCenter"
         android:background="@android:color/transparent"
         android:src="@drawable/profil"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@id/logoImage"
+        app:layout_constraintBottom_toBottomOf="@id/logoImage"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="16dp"/>
 
@@ -42,10 +45,13 @@
         android:id="@+id/notificationButton"
         android:layout_width="48dp"
         android:layout_height="48dp"
+        android:padding="8dp"
         android:src="@drawable/notifications"
         android:background="@android:color/transparent"
+        android:scaleType="fitCenter"
+        app:layout_constraintTop_toTopOf="@id/logoImage"
+        app:layout_constraintBottom_toBottomOf="@id/logoImage"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_margin="16dp"/>
 
     <ScrollView
@@ -121,8 +127,9 @@
 
                     <RelativeLayout
                         android:id="@+id/livemusic"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="24dp"
                         android:background="@color/darkColor">
 
                         <ImageView
@@ -142,8 +149,9 @@
 
                     <RelativeLayout
                         android:id="@+id/natureoutdoors"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="23dp"
                         android:background="@color/darkColor">
 
                         <ImageView
@@ -164,8 +172,9 @@
 
                     <RelativeLayout
                         android:id="@+id/artcalture"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="23dp"
                         android:background="@color/darkColor">
 
                         <ImageView
@@ -186,8 +195,9 @@
 
                     <RelativeLayout
                         android:id="@+id/adrenalinerush"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:padding="23dp"
                         android:background="@color/darkColor">
 
                         <ImageView
