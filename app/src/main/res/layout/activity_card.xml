@@ -41,16 +41,16 @@
                 android:id="@+id/activityTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center"
                 android:text="Title "
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:textColor="@color/white"
-                android:gravity="center"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toEndOf="@id/activityImage"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0"
-                android:layout_marginBottom="10dp" />
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@id/activityImage"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/activityInfo"
@@ -74,7 +74,7 @@
                 app:layout_constraintTop_toBottomOf="@id/activityInfo"
                 app:layout_constraintStart_toEndOf="@id/activityImage"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="@id/activityImage"
+                 app:layout_constraintBottom_toBottomOf="@id/activityImage"
                 android:layout_marginTop="8dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
