@@ -1,4 +1,4 @@
-package com.example.dayo.ui.signup;
+package com.example.dayo.ui;
 
 import android.os.Bundle;
 import android.content.Intent;
@@ -8,10 +8,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.dayo.R;
-import com.example.dayo.ui.login.LoginActivity;
 import com.example.dayo.data.database.DatabaseInstance;
 import com.example.dayo.data.database.User;
-import android.util.Log;
 
 public class SignUpActivity extends AppCompatActivity {
 

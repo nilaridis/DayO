@@ -1,9 +1,8 @@
-package com.example.dayo.ui.profile;
+package com.example.dayo.ui;
 
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.dayo.R;
-import com.example.dayo.ui.base.BaseActivity;
 
 public class ProfileActivity extends BaseActivity {
 
