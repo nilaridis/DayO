@@ -17,9 +17,6 @@
             android:name=".navigationbar"
             android:exported="false" />
         <activity
-            android:name=".activity_card"
-            android:exported="false" />
-        <activity
             android:name=".Notifications"
             android:exported="false" />
         <activity
@@ -36,7 +33,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ui.login.LoginActivity"
             android:exported="true"
@@ -46,6 +42,9 @@
         <activity
             android:name=".ui.main.MainActivity"
             android:exported="true" />
+        <activity
+            android:name=".SearchActivity"
+            android:exported="true"/>
 
     </application>
 

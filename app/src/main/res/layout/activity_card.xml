@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context=".ActivityCard">
+    android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/activityCard"
@@ -42,9 +41,9 @@
                 android:id="@+id/activityTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="12dp"
                 android:gravity="center"
-                android:text="Title "
+                android:text="horsing "
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -54,16 +53,40 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/activityInfo"
+                android:id="@+id/activitylocation"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Ιππασία στο βουνό\nΏρα: 10:00 - 12:00\nΤιμή: 25€"
+                android:text="thessaloniki "
                 android:textSize="16sp"
                 android:textColor="@color/white"
                 android:gravity="center"
                 app:layout_constraintTop_toBottomOf="@id/activityTitle"
                 app:layout_constraintStart_toEndOf="@id/activityImage"
                 app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/activitprice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="12$"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/activitylocation"
+                app:layout_constraintStart_toEndOf="@id/activityImage"
+                app:layout_constraintEnd_toEndOf="parent" />
+            <TextView
+                android:id="@+id/activityduration"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="30minutes"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:gravity="center"
+                app:layout_constraintTop_toBottomOf="@id/activitprice"
+                app:layout_constraintStart_toEndOf="@id/activityImage"
+                app:layout_constraintEnd_toEndOf="parent" />
+
 
             <Button
                 android:id="@+id/bookNowButton"
@@ -72,10 +95,10 @@
                 android:text="More Info"
                 android:backgroundTint="@color/backgroundColor"
                 android:textColor="@color/lightColor"
-                app:layout_constraintTop_toBottomOf="@id/activityInfo"
+                app:layout_constraintTop_toBottomOf="@id/activityduration"
                 app:layout_constraintStart_toEndOf="@id/activityImage"
                 app:layout_constraintEnd_toEndOf="parent"
-                 app:layout_constraintBottom_toBottomOf="@id/activityImage"
+                app:layout_constraintBottom_toBottomOf="@id/activityImage"
                 android:layout_marginTop="8dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
