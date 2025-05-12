@@ -1,14 +1,8 @@
-package com.example.dayo.ui.main;
+package com.example.dayo.ui;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ImageButton;
-import com.example.dayo.ui.base.BaseActivity;
-import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.dayo.R;
-import com.example.dayo.ui.login.LoginActivity;
-import com.example.dayo.ui.profile.ProfileActivity;
-import com.example.dayo.ui.signup.SignUpActivity;
 
 public class MainActivity extends BaseActivity {
 
