@@ -52,8 +52,28 @@ public class BaseActivity extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
+        }
 
-    }
+        ImageButton homeBtn = findViewById(R.id.nav_home);
+        if (homeBtn != null) {
+            homeBtn.setOnClickListener(v -> {
+                    Intent intent = new Intent(BaseActivity.this, MainActivity.class);
+                    startActivity(intent);
+
+            });
+        }
+
+        ImageButton searchBtn = findViewById(R.id.nav_search);
+        if (searchBtn != null) {
+            searchBtn.setOnClickListener(v -> {
+                if (!(BaseActivity.this instanceof SearchActivity)) {
+                    Intent intent = new Intent(BaseActivity.this, SearchActivity.class);
+                    startActivity(intent);
+                }
+            });
+        }
+
+
 
     }
 }
