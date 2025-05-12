@@ -5,5 +5,6 @@
     <color name="darkColor">#03045E</color>
     <color name="lightColor">#FC8D56</color>
     <color name="backgroundColor">#E0F7FA</color>
+    <color name="backgroundsearch">#C8CECE</color>
 
 </resources>
