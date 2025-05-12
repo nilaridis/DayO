@@ -2,6 +2,7 @@ package com.example.dayo.data.database;
 
 import android.content.Context;
 
+import com.example.dayo.data.database.Activity;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -11,6 +12,7 @@ import java.lang.reflect.Type;
 import java.util.List;
 
 public class JsonUtils {
+
     public static List<Activity> loadActivitiesFromJson(Context context) {
         try {
             InputStream inputStream = context.getAssets().open("activities.json");

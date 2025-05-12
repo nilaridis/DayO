@@ -1,0 +1,14 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- Χρώμα φόντου (αν θέλεις διάφανο, χρησιμοποίησε transparent) -->
+    <solid android:color="@color/backgroundsearch" />
+
+    <!-- Στρογγυλεμένες γωνίες -->
+    <corners android:radius="16dp" />
+
+    <!-- Πλαίσιο -->
+    <stroke
+        android:width="2dp"
+        android:color="@color/darkColor" />
+</shape>
