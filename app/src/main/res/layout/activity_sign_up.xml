@@ -15,7 +15,7 @@
         <!-- Logo -->
         <ImageView
             android:id="@+id/img_logo"
-            android:layout_width="155dp"
+            android:layout_width="240dp"
             android:layout_height="60dp"
             android:src="@drawable/logo"
             />
