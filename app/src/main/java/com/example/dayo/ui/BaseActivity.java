@@ -1,18 +1,14 @@
-package com.example.dayo.ui.base;
+package com.example.dayo.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.dayo.R;
-import com.example.dayo.ui.main.MainActivity;
-import com.example.dayo.ui.profile.ProfileActivity;
-import com.example.dayo.ui.notifications.NotificationsActivity;
 
 public class BaseActivity extends AppCompatActivity {
     @Override
