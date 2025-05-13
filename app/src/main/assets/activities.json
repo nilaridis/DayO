@@ -8,7 +8,7 @@
     "duration": 120
   },
   {
-    "name": "Hiking at Seich Sou Forest",
+    "name": "Hiking",
     "category": "NATURE_OUTDOORS",
     "description": "Explore the natural beauty of the Seich Sou forest with a guided hiking tour.",
     "location": "Seich Sou Forest, Thessaloniki",
@@ -16,7 +16,7 @@
     "duration": 180
   },
   {
-    "name": "Visit the Archaeological Museum",
+    "name": "Museum Visit",
     "category": "ART_CULTURE",
     "description": "Discover ancient artifacts and learn about the rich history of Thessaloniki at the Archaeological Museum.",
     "location": "Archaeological Museum of Thessaloniki",
@@ -24,7 +24,7 @@
     "duration": 90
   },
   {
-    "name": "Ziplining Adventure at Adventure Park",
+    "name": "Ziplining Adventure",
     "category": "ADRENALINE_RUSH",
     "description": "Experience the thrill of ziplining over the park's breathtaking scenery.",
     "location": "Adventure Park near Thessaloniki",
@@ -32,11 +32,91 @@
     "duration": 60
   },
   {
-    "name": "Photography Walk by the Waterfront",
+    "name": "Photography Walk",
     "category": "NATURE_OUTDOORS",
     "description": "Capture stunning views of the Thermaic Gulf and iconic landmarks on a guided photography walk.",
     "location": "Thessaloniki Waterfront",
     "pricePerPerson": 20.0,
     "duration": 120
+  },
+  {
+    "name": "Rembetiko Night",
+    "category": "LIVE_MUSIC",
+    "description": "Authentic Rembetiko music in a traditional taverna in Ano Poli.",
+    "location": "Ano Poli, Thessaloniki",
+    "pricePerPerson": 12.0,
+    "duration": 150
+  },{
+  "name": "Indie Band Showcase",
+  "category": "LIVE_MUSIC",
+  "description": "Discover new local indie bands at a popular live stage.",
+  "location": "Mylos Area, Thessaloniki",
+  "pricePerPerson": 8.0,
+  "duration": 180
+},
+  {
+    "name": "Kayaking in Thermaikos",
+    "category": "NATURE_OUTDOORS",
+    "description": "Paddle along the coastline and enjoy unique city views from the sea.",
+    "location": "Kalamaria Coast, Thessaloniki",
+    "pricePerPerson": 30.0,
+    "duration": 120
+  },
+  {
+    "name": "Bird Watching Axios",
+    "category": "NATURE_OUTDOORS",
+    "description": "Observe diverse bird species at the Axios Delta National Park.",
+    "location": "Axios Delta National Park",
+    "pricePerPerson": 5.0,
+    "duration": 240
+  },
+  {
+    "name": "Bike Tour Waterfront",
+    "category": "NATURE_OUTDOORS",
+    "description": "A relaxing bicycle ride along Thessaloniki's renovated waterfront.",
+    "location": "Thessaloniki Waterfront",
+    "pricePerPerson": 10.0,
+    "duration": 90
+  },
+  {
+    "name": "Byzantine Walls Tour",
+    "category": "ART_CULTURE",
+    "description": "Walk the ancient Byzantine walls and learn their history.",
+    "location": "Ano Poli, Thessaloniki",
+    "pricePerPerson": 0.0,
+    "duration": 120
+  },
+  {
+    "name": "Street Art Hunt",
+    "category": "ART_CULTURE",
+    "description": "Explore vibrant murals and graffiti in hidden city corners.",
+    "location": "Various locations, Thessaloniki",
+    "pricePerPerson": 0.0,
+    "duration": 90
+  },
+  {
+    "name": "Visit White Tower",
+    "category": "ART_CULTURE",
+    "description": "Explore the city's iconic landmark and its museum.",
+    "location": "White Tower, Thessaloniki",
+    "pricePerPerson": 6.0,
+    "duration": 60
+  },
+  {
+    "name": "Scuba Diving Intro",
+    "category": "ADRENALINE_RUSH",
+    "description": "Discover underwater life with an introductory scuba session.",
+    "location": "Epanomi Coast (near Thessaloniki)",
+    "pricePerPerson": 50.0,
+    "duration": 180
+  },
+  {
+    "name": "Climbing Hortiatis",
+    "category": "ADRENALINE_RUSH",
+    "description": "Beginner-friendly rock climbing on Mount Hortiatis.",
+    "location": "Mount Hortiatis",
+    "pricePerPerson": 40.0,
+    "duration": 240
   }
+
 ]

@@ -1,21 +1,46 @@
 package com.example.dayo.data.database;
 
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "activities")
-public class Activity{
+public class Activity {
     @PrimaryKey(autoGenerate = true)
     private int id;
 
+    @ColumnInfo(name = "name")
     private String name;
+
+    @ColumnInfo(name = "category")
     private String category;
+
+    @ColumnInfo(name = "description")
     private String description;
+
+    @ColumnInfo(name = "location")
     private String location;
+
+    @ColumnInfo(name = "price_per_person")
     private double price;
+
+    @ColumnInfo(name = "duration_minutes")
     private int duration;
 
-    // Getters και Setters
+    // Default Constructor
+    public Activity() {}
+
+    // Parameterized Constructor
+    public Activity(String name, String category, String description, String location, double price, int duration) {
+        this.name = name;
+        this.category = category;
+        this.description = description;
+        this.location = location;
+        this.price = price;
+        this.duration = duration;
+    }
+
+    // Getters and Setters
     public int getId() {
         return id;
     }
@@ -47,6 +72,7 @@ public class Activity{
     public void setDescription(String description) {
         this.description = description;
     }
+
     public String getLocation() {
         return location;
     }
@@ -69,5 +95,19 @@ public class Activity{
 
     public void setDuration(int duration) {
         this.duration = duration;
+    }
+
+    // toString method for debugging
+    @Override
+    public String toString() {
+        return "Activity{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", category='" + category + '\'' +
+                ", description='" + description + '\'' +
+                ", location='" + location + '\'' +
+                ", price=" + price +
+                ", duration=" + duration +
+                '}';
     }
 }
