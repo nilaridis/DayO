@@ -55,23 +55,19 @@
             <!-- Reused Cards -->
             <include
                 android:id="@+id/activityCard1"
-                layout="@layout/activity_card"
-                android:layout_marginBottom="16dp" />
+                layout="@layout/activity_card"/>
 
             <include
                 android:id="@+id/activityCard2"
-                layout="@layout/activity_card"
-                android:layout_marginBottom="16dp" />
+                layout="@layout/activity_card"/>
 
             <include
                 android:id="@+id/activityCard3"
-                layout="@layout/activity_card"
-                android:layout_marginBottom="16dp" />
+                layout="@layout/activity_card"/>
 
             <include
                 android:id="@+id/activityCard4"
-                layout="@layout/activity_card"
-                android:layout_marginBottom="16dp" />
+                layout="@layout/activity_card"/>
 
 
 
