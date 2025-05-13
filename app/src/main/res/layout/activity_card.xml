@@ -20,86 +20,108 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/darkColor"
-            >
+            android:background="@color/darkColor">
 
 
             <ImageView
                 android:id="@+id/activityImage"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_width="140dp"
+                android:layout_height="180dp"
                 android:layout_marginEnd="16dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/exampleimage"
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintDimensionRatio="1"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintDimensionRatio="1" />
+                app:layout_constraintTop_toTopOf="parent" />
 
 
             <TextView
                 android:id="@+id/activityTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:gravity="center"
-                android:text="horsing "
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:gravity="center_horizontal"
+                android:maxLines="1"
+                android:text="Archaeological Museum"
                 android:textColor="@color/white"
                 android:textSize="20sp"
+
                 android:textStyle="bold"
+                app:autoSizeMaxTextSize="20sp"
+                app:autoSizeMinTextSize="12sp"
+                app:autoSizeStepGranularity="1sp"
+                app:autoSizeTextType="uniform"
+
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@id/activityImage"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="@id/activityImage" />
 
             <TextView
                 android:id="@+id/activitylocation"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="thessaloniki "
-                android:textSize="16sp"
-                android:textColor="@color/white"
                 android:gravity="center"
-                app:layout_constraintTop_toBottomOf="@id/activityTitle"
+                android:text="Archaeological Museum of Thessaloniki"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/activityImage"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintTop_toBottomOf="@id/activityTitle" />
 
             <TextView
                 android:id="@+id/activitprice"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="12$"
-                android:textSize="16sp"
-                android:textColor="@color/white"
                 android:gravity="center"
-                app:layout_constraintTop_toBottomOf="@id/activitylocation"
+                android:text="12$"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/activityImage"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintTop_toBottomOf="@id/activitylocation" />
+
             <TextView
                 android:id="@+id/activityduration"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="30minutes"
-                android:textSize="16sp"
-                android:textColor="@color/white"
                 android:gravity="center"
-                app:layout_constraintTop_toBottomOf="@id/activitprice"
+                android:text="30minutes"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/activityImage"
-                app:layout_constraintEnd_toEndOf="parent" />
+                app:layout_constraintTop_toBottomOf="@id/activitprice" />
 
 
             <Button
                 android:id="@+id/bookNowButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="More Info"
+                android:layout_marginTop="8dp"
                 android:backgroundTint="@color/backgroundColor"
+                android:text="More Info"
                 android:textColor="@color/lightColor"
-                app:layout_constraintTop_toBottomOf="@id/activityduration"
-                app:layout_constraintStart_toEndOf="@id/activityImage"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="@id/activityImage"
-                android:layout_marginTop="8dp" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/activityImage"
+                app:layout_constraintTop_toBottomOf="@id/activityduration" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="20dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="20dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
