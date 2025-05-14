@@ -52,8 +52,9 @@ public class JsonDataLoader {
                         String location = activityJson.getString("location");
                         double price = activityJson.getDouble("pricePerPerson");
                         int duration = activityJson.getInt("duration");
+                        String imageName = activityJson.optString("imageName","default_image");
 
-                        Activity activity = new Activity(name, category, description, location, price, duration);
+                        Activity activity = new Activity(name, category, description, location, price, duration, imageName);
                         activitiesList.add(activity);
                     }
 
