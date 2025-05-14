@@ -18,7 +18,7 @@ public interface ActivityDao {
     void insert(Activity activity);
 
     // Ανάκτηση όλων των δραστηριοτήτων από τη βάση δεδομένων
-    @Query("SELECT * FROM activities")
+    @Query("SELECT * FROM activities WHERE is_upcoming = 0")
     List<Activity> getAllActivities();
 
     // Ανάκτηση δραστηριοτήτων βάσει κατηγορίας
@@ -32,4 +32,8 @@ public interface ActivityDao {
     // Διαγραφή όλων των δραστηριοτήτων από τη βάση δεδομένων
     @Query("DELETE FROM activities")
     void deleteAll();
+
+    @Query("SELECT * FROM activities WHERE is_upcoming = 1")
+    List<Activity> getUpcomingActivities();
+
 }

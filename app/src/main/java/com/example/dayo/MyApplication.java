@@ -14,5 +14,6 @@ public class MyApplication extends Application {
         // Κάλεσε εδώ τη μέθοδο για τη φόρτωση των δεδομένων από το JSON.
         // Το 'this' εδώ αναφέρεται στο Application context.
         JsonDataLoader.loadActivitiesFromJson(this);
+        JsonDataLoader.loadUpcomingActivitiesFromJson(this);
     }
 }

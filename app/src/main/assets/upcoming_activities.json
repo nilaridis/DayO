@@ -1,6 +1,6 @@
 [
   {
-    "name": "Boat Cruise with Seafood Lunch",
+    "name": "Boat Cruise",
     "category": "NATURE_OUTDOORS",
     "description": "Cruise the Thermaic Gulf and enjoy freshly cooked seafood on board.",
     "location": "Thessaloniki Port",
@@ -8,7 +8,7 @@
     "duration": 180
   },
   {
-    "name": "Museum Hopping Day Pass",
+    "name": "Museum Day Pass",
     "category": "ART_CULTURE",
     "description": "Access multiple top museums in Thessaloniki with one guided itinerary.",
     "location": "City Center",
@@ -62,46 +62,6 @@
     "location": "Aristotelous Square",
     "pricePerPerson": 10.0,
     "duration": 60
-  },
-  {
-    "name": "White Tower Climb & Audio Tour",
-    "category": "ART_CULTURE",
-    "description": "Climb Thessaloniki’s most famous monument and enjoy panoramic city views with an audio guide.",
-    "location": "White Tower of Thessaloniki",
-    "pricePerPerson": 15.0,
-    "duration": 60
-  },
-  {
-    "name": "Mountain Biking on Hortiatis Trails",
-    "category": "ADRENALINE_RUSH",
-    "description": "Ride thrilling downhill paths and scenic forest trails on Mount Hortiatis.",
-    "location": "Mount Hortiatis",
-    "pricePerPerson": 40.0,
-    "duration": 150
-  },
-  {
-    "name": "Live Bouzoukia Night Experience",
-    "category": "LIVE_MUSIC",
-    "description": "Enjoy an authentic Greek night with live bouzouki music, dancing, and drinks at a classic Thessaloniki music club.",
-    "location": "Ladadika District",
-    "pricePerPerson": 35.0,
-    "duration": 180
-  },
-  {
-    "name": "Live Music Tavern Dinner",
-    "category": "LIVE_MUSIC",
-    "description": "Enjoy a delicious Greek meal accompanied by live folk music in a vibrant local tavern.",
-    "location": "Bit Bazaar Area",
-    "pricePerPerson": 30.0,
-    "duration": 150
-  },
-  {
-    "name": "Live Music Cruise on the Thermaic Gulf",
-    "category": "LIVE_MUSIC",
-    "description": "Enjoy live acoustic performances aboard a boat cruise under the Thessaloniki night sky.",
-    "location": "Thessaloniki Port",
-    "pricePerPerson": 40.0,
-    "duration": 120
   },
   {
     "name": "Rock & Blues Night at Local Pub",
