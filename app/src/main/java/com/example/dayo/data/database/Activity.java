@@ -27,17 +27,23 @@ public class Activity {
     @ColumnInfo(name = "duration_minutes")
     private int duration;
 
+    @ColumnInfo(name = "image")
+    private String imageName;
+
+
+
     // Default Constructor
     public Activity() {}
 
     // Parameterized Constructor
-    public Activity(String name, String category, String description, String location, double price, int duration) {
+    public Activity(String name, String category, String description, String location, double price, int duration, String imageName) {
         this.name = name;
         this.category = category;
         this.description = description;
         this.location = location;
         this.price = price;
         this.duration = duration;
+        this.imageName = imageName ;
     }
 
     // Getters and Setters
@@ -97,6 +103,14 @@ public class Activity {
         this.duration = duration;
     }
 
+    public String getImageName() {
+        return imageName;
+    }
+
+    public void setImageName(String imageName) {
+        this.imageName = imageName;
+    }
+
     // toString method for debugging
     @Override
     public String toString() {
@@ -108,6 +122,7 @@ public class Activity {
                 ", location='" + location + '\'' +
                 ", price=" + price +
                 ", duration=" + duration +
+                ", imageName='" + imageName + '\'' +
                 '}';
     }
 }

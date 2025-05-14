@@ -14,6 +14,7 @@ import com.example.dayo.data.database.Activity;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import android.util.Log;
 
 public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.ActivityViewHolder> {
 
@@ -43,9 +44,23 @@ public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.Activi
         holder.activityPrice.setText(String.format(Locale.getDefault(), "%.2f€", currentActivity.getPrice())); // Ή $
         holder.activityDuration.setText(String.format(Locale.getDefault(), "%d minutes", currentActivity.getDuration()));
 
-        // Για την εικόνα, προς το παρόν χρησιμοποιούμε τη σταθερή εικόνα από το XML.
-        // Αν είχες URL εικόνας στο Activity object, θα το φόρτωνες εδώ με μια βιβλιοθήκη όπως Glide ή Picasso.
-        // holder.activityImage.setImageResource(R.drawable.exampleimage); // Αυτό γίνεται ήδη από το XML
+        String imageName = currentActivity.getImageName();
+        if (imageName != null && !imageName.isEmpty()) {
+            // Το getIdentifier ψάχνει έναν πόρο με βάση το όνομα, τον τύπο ("drawable"), και το package.
+            int imageResourceId = context.getResources().getIdentifier(imageName, "drawable", context.getPackageName());
+
+            if (imageResourceId != 0) { // Αν βρέθηκε το resource ID
+                holder.activityImage.setImageResource(imageResourceId);
+            } else {
+                // Η εικόνα δεν βρέθηκε, βάλε ένα placeholder ή logαρε το σφάλμα
+                Log.w("ActivityAdapter", "Drawable resource not found for: " + imageName);
+                holder.activityImage.setImageResource(R.drawable.exampleimage);
+            }
+        } else {
+            // Δεν υπάρχει όνομα εικόνας, βάλε ένα placeholder
+            Log.w("ActivityAdapter", "No image name");
+            holder.activityImage.setImageResource(R.drawable.exampleimage); // Βάλε μια default εικόνα
+        }
 
         // TODO: Πρόσθεσε OnClickListener για το holder.bookNowButton αν χρειάζεται
         // holder.bookNowButton.setOnClickListener(v -> {
