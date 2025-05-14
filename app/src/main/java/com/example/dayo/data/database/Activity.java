@@ -30,20 +30,24 @@ public class Activity {
     @ColumnInfo(name = "image")
     private String imageName;
 
+    @ColumnInfo(name = "is_upcoming")
+    private boolean isUpcoming;
+
 
 
     // Default Constructor
     public Activity() {}
 
     // Parameterized Constructor
-    public Activity(String name, String category, String description, String location, double price, int duration, String imageName) {
+    public Activity(String name, String category, String description, String location, double price, int duration, String imageName, boolean isUpcoming) {
         this.name = name;
         this.category = category;
         this.description = description;
         this.location = location;
         this.price = price;
         this.duration = duration;
-        this.imageName = imageName ;
+        this.imageName = imageName;
+        this.isUpcoming = isUpcoming;
     }
 
     // Getters and Setters
@@ -110,6 +114,10 @@ public class Activity {
     public void setImageName(String imageName) {
         this.imageName = imageName;
     }
+
+    public boolean isUpcoming() { return isUpcoming; }
+
+    public void setUpcoming(boolean upcoming) { isUpcoming = upcoming; }
 
     // toString method for debugging
     @Override
