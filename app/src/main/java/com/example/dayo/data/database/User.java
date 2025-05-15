@@ -11,6 +11,7 @@ public class User {
     private String email;
     private String password;
     private String name;
+    private String category;
 
     // Getters και Setters
     public int getId() {
@@ -44,4 +45,8 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
+
+    public String getCategory(){ return category;}
+
+    public void setCategory(String category) { this.category = category; }
 }
