@@ -57,9 +57,10 @@ public class BaseActivity extends AppCompatActivity {
         ImageButton homeBtn = findViewById(R.id.nav_home);
         if (homeBtn != null) {
             homeBtn.setOnClickListener(v -> {
+                if(!(BaseActivity.this instanceof MainActivity)){
                     Intent intent = new Intent(BaseActivity.this, MainActivity.class);
                     startActivity(intent);
-
+                }
             });
         }
 
@@ -73,6 +74,25 @@ public class BaseActivity extends AppCompatActivity {
             });
         }
 
+        ImageButton matchBtn = findViewById(R.id.nav_match);
+        if (matchBtn != null) {
+            matchBtn.setOnClickListener(v -> {
+                if (!(BaseActivity.this instanceof MatchActivity)) {
+                    Intent intent = new Intent(BaseActivity.this, MatchActivity.class);
+                    startActivity(intent);
+                }
+            });
+        }
+
+        ImageButton upcomingBtn = findViewById(R.id.nav_events);
+        if (upcomingBtn != null) {
+            upcomingBtn.setOnClickListener(v -> {
+                if (!(BaseActivity.this instanceof UpcomingActivity)) {
+                    Intent intent = new Intent(BaseActivity.this, UpcomingActivity.class);
+                    startActivity(intent);
+                }
+            });
+        }
 
 
     }

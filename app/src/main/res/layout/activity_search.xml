@@ -8,6 +8,7 @@
     tools:context=".ui.SearchActivity"
     android:background="@color/backgroundColor">
 
+
     <include
         layout="@layout/header_layout"
         android:layout_width="match_parent"
@@ -27,7 +28,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        >
+        android:clickable="true"
+        android:focusable="true">
+
 
         <ImageView
             android:id="@+id/searchIcon"
@@ -38,14 +41,35 @@
 
         <EditText
             android:id="@+id/search"
+            android:inputType="text"
+            android:imeOptions="actionSearch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:hint="Search"
             android:paddingTop="4dp"
             android:background="@null"/>
     </LinearLayout>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewActivities"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/searchBarContainer"
+        app:layout_constraintBottom_toTopOf="@id/navigation_bar_component"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="8dp"
+        android:clipToPadding="false"
+        android:layout_marginTop="8dp"/>
 
-    <include layout="@layout/activity_navigationbar" />
+    <include
+        android:id="@+id/navigation_bar_component"
+        layout="@layout/activity_navigationbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
