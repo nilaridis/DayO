@@ -1,0 +1,82 @@
+[
+  {
+    "name": "Boat Cruise",
+    "category": "NATURE_OUTDOORS",
+    "description": "Cruise the Thermaic Gulf and enjoy freshly cooked seafood on board.",
+    "location": "Thessaloniki Port",
+    "pricePerPerson": 55.0,
+    "duration": 180
+  },
+  {
+    "name": "Museum Day Pass",
+    "category": "ART_CULTURE",
+    "description": "Access multiple top museums in Thessaloniki with one guided itinerary.",
+    "location": "City Center",
+    "pricePerPerson": 30.0,
+    "duration": 240
+  },
+  {
+    "name": "Thessaloniki Bike Tour",
+    "category": "NATURE_OUTDOORS",
+    "description": "Cycle along the coast and through historic neighborhoods with a friendly local guide.",
+    "location": "Thessaloniki Waterfront",
+    "pricePerPerson": 18.0,
+    "duration": 120
+  },
+  {
+    "name": "Sunset Sailing Experience",
+    "category": "NATURE_OUTDOORS",
+    "description": "Enjoy a relaxing evening on the Thermaic Gulf with a glass of wine and stunning sunset views.",
+    "location": "Thessaloniki Marina",
+    "pricePerPerson": 45.0,
+    "duration": 150
+  },
+  {
+    "name": "Castle Walls Sunset Tour",
+    "category": "NATURE_OUTDOORS",
+    "description": "Walk along the ancient castle walls of Ano Poli and watch the sun set over the city and sea.",
+    "location": "Heptapyrgion, Ano Poli",
+    "pricePerPerson": 18.0,
+    "duration": 90
+  },
+  {
+    "name": "Greek Mythology Storytelling Tour",
+    "category": "ART_CULTURE",
+    "description": "Discover the myths and legends of ancient Greece in an engaging walking tour.",
+    "location": "Thessaloniki City Center",
+    "pricePerPerson": 22.0,
+    "duration": 90
+  },
+  {
+    "name": "Boat Tour to Peraia Beach",
+    "category": "NATURE_OUTDOORS",
+    "description": "Cruise across the bay and spend a few hours relaxing at the sandy beach of Peraia.",
+    "location": "Thessaloniki Port",
+    "pricePerPerson": 35.0,
+    "duration": 240
+  },
+  {
+    "name": "Aristotle Square Historical Tour",
+    "category": "ART_CULTURE",
+    "description": "Discover the architectural and cultural significance of Thessaloniki’s main square.",
+    "location": "Aristotelous Square",
+    "pricePerPerson": 10.0,
+    "duration": 60
+  },
+  {
+    "name": "Rock & Blues Night at Local Pub",
+    "category": "LIVE_MUSIC",
+    "description": "Enjoy live rock and blues in one of Thessaloniki’s most iconic underground pubs.",
+    "location": "Ladadika Rock Bar",
+    "pricePerPerson": 10.0,
+    "duration": 150
+  },
+  {
+    "name": "Café Live: Singer-Songwriter Sessions",
+    "category": "LIVE_MUSIC",
+    "description": "Unplug and relax with live acoustic sets by rising local singer-songwriters.",
+    "location": "Navarinou Café Scene",
+    "pricePerPerson": 12.0,
+    "duration": 90
+  }
+]
