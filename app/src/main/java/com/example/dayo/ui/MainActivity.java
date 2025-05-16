@@ -1,26 +1,36 @@
 package com.example.dayo.ui;
-
+import android.content.Intent;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.os.Bundle;
-import android.util.Log;
-
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.dayo.R;
-import com.example.dayo.data.database.AppDatabase;
-import com.example.dayo.data.database.Activity;
-import com.example.dayo.data.database.ActivityDao;
 
-import java.util.List;
+
 
 public class MainActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main); // Βεβαιώσου ότι φορτώνεται το σωστό layout
-        setupHeaderAndNavbar(); // Ρύθμισε το header και το navbar
+        setContentView(R.layout.activity_main);
+        setupHeaderAndNavbar();
+        ImageButton btnLiveMusic = findViewById(R.id.btnLiveMusic);
+        ImageButton btnNatureOutdoors = findViewById(R.id.btnNatureOutdoors);
+        ImageButton btnArtsCulture = findViewById(R.id.btnArtCulture);
+        ImageButton btnAdrenalineRush = findViewById(R.id.btnAdrenalineRush);
+
+        // Set onClickListeners for each button
+        btnLiveMusic.setOnClickListener(v -> openSearchActivity("Live Music"));
+        btnNatureOutdoors.setOnClickListener(v -> openSearchActivity("Nature & Outdoors"));
+        btnArtsCulture.setOnClickListener(v -> openSearchActivity("Arts & Culture"));
+        btnAdrenalineRush.setOnClickListener(v -> openSearchActivity("Adrenaline Rush"));
+    }
+        private void openSearchActivity(String category) {
+            Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+            intent.putExtra("CATEGORY", category);
+            startActivity(intent);
+        }
     }
 
 
-}

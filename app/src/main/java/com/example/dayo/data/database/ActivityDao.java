@@ -5,6 +5,7 @@ import androidx.room.Insert;
 import androidx.room.Query;
 
 import java.util.List;
+import java.util.Random;
 
 @Dao
 public interface ActivityDao {
@@ -35,5 +36,8 @@ public interface ActivityDao {
 
     @Query("SELECT * FROM activities WHERE is_upcoming = 1")
     List<Activity> getUpcomingActivities();
+//
+//    @Query("SELECT * FROM activities ORDER BY RANDOM() LIMIT 1")
+//    Activity getRandomActivity();
 
 }

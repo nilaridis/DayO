@@ -59,7 +59,7 @@
                 android:textStyle="bold"
                 android:layout_marginTop="12dp"/>
 
-            <include layout="@layout/activity_card" />
+
 
             <TextView
                 android:id="@+id/CategoryChoice"
@@ -72,105 +72,56 @@
                 android:layout_marginTop="20dp"/>
 
             <GridLayout
+                android:id="@+id/categoryGrid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:columnCount="2"
                 android:rowCount="2"
+                android:layout_margin="16dp"
                 android:layout_marginTop="10dp">
 
-
-                <androidx.cardview.widget.CardView
+                <ImageButton
+                    android:id="@+id/btnLiveMusic"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:src="@drawable/livemusic"
+                    android:layout_margin="8dp"
                     android:layout_columnWeight="1"
-                    android:layout_margin="5dp"
-                    app:cardCornerRadius="15dp"
-                    app:cardElevation="6dp">
+                    android:scaleType="centerInside"
+                    android:background="@drawable/rounded_button"/>
 
-                    <RelativeLayout
-                        android:id="@+id/livemusic"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="24dp"
-                        android:background="@color/darkColor">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="120dp"
-                            android:layout_centerInParent="true"
-                            android:src="@drawable/livemusic" />
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView
+                <ImageButton
+                    android:id="@+id/btnNatureOutdoors"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:src="@drawable/natureoutdoors"
+                    android:layout_margin="8dp"
                     android:layout_columnWeight="1"
-                    android:layout_margin="5dp"
-                    app:cardCornerRadius="15dp"
-                    app:cardElevation="6dp">
+                    android:scaleType="centerInside"
+                    android:background="@drawable/rounded_button"/>
 
-                    <RelativeLayout
-                        android:id="@+id/natureoutdoors"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="23dp"
-                        android:background="@color/darkColor">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="120dp"
-                            android:layout_centerInParent="true"
-                            android:src="@drawable/natureoutdoors" />
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
+                <ImageButton
+                    android:id="@+id/btnAdrenalineRush"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:src="@drawable/adrenalinerush"
+                    android:layout_margin="8dp"
                     android:layout_columnWeight="1"
-                    android:layout_margin="5dp"
-                    app:cardCornerRadius="15dp"
-                    app:cardElevation="6dp">
+                    android:scaleType="centerInside"
+                    android:background="@drawable/rounded_button"/>
 
-                    <RelativeLayout
-                        android:id="@+id/artcalture"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="23dp"
-                        android:background="@color/darkColor">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="120dp"
-                            android:layout_centerInParent="true"
-                            android:src="@drawable/artculture" />
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
+                <ImageButton
+                    android:id="@+id/btnArtCulture"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:src="@drawable/artculture"
+                    android:layout_margin="8dp"
                     android:layout_columnWeight="1"
-                    android:layout_margin="5dp"
-                    app:cardCornerRadius="15dp"
-                    app:cardElevation="6dp">
-
-                    <RelativeLayout
-                        android:id="@+id/adrenalinerush"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:padding="23dp"
-                        android:background="@color/darkColor">
-
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="120dp"
-                            android:layout_centerInParent="true"
-                            android:src="@drawable/adrenalinerush" />
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
+                    android:scaleType="centerInside"
+                    android:background="@drawable/rounded_button"/>
 
             </GridLayout>
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="130dp"
