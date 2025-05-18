@@ -21,10 +21,10 @@ public class MainActivity extends BaseActivity {
         ImageButton btnAdrenalineRush = findViewById(R.id.btnAdrenalineRush);
 
         // Set onClickListeners for each button
-        btnLiveMusic.setOnClickListener(v -> openSearchActivity("Live Music"));
-        btnNatureOutdoors.setOnClickListener(v -> openSearchActivity("Nature & Outdoors"));
-        btnArtsCulture.setOnClickListener(v -> openSearchActivity("Arts & Culture"));
-        btnAdrenalineRush.setOnClickListener(v -> openSearchActivity("Adrenaline Rush"));
+        btnLiveMusic.setOnClickListener(v -> openSearchActivity("LIVE_MUSIC"));
+        btnNatureOutdoors.setOnClickListener(v -> openSearchActivity("NATURE_OUTDOORS"));
+        btnArtsCulture.setOnClickListener(v -> openSearchActivity("ART_CULTURE"));
+        btnAdrenalineRush.setOnClickListener(v -> openSearchActivity("ADRENALINE_RUSH"));
     }
         private void openSearchActivity(String category) {
             Intent intent = new Intent(MainActivity.this, SearchActivity.class);
