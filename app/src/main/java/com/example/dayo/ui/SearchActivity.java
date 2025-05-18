@@ -1,6 +1,7 @@
 package com.example.dayo.ui;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -8,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -40,6 +42,7 @@ public class SearchActivity extends BaseActivity {
         setupHeaderAndNavbar();
 
         recyclerViewActivities = findViewById(R.id.recyclerViewActivities);
+        ImageButton btnFilters = findViewById(R.id.btnFilters);
         recyclerViewActivities.setLayoutManager(new LinearLayoutManager(this));
         activityAdapter = new ActivityAdapter(this, activitiesList);
         recyclerViewActivities.setAdapter(activityAdapter);
@@ -74,6 +77,14 @@ public class SearchActivity extends BaseActivity {
             public void afterTextChanged(Editable s) {
             }
         });
+
+        // Set OnClickListener for ntbFilters
+        btnFilters.setOnClickListener(v ->{
+            Intent intent = new Intent(SearchActivity.this , FiltersActivity.class);
+            startActivity(intent);
+        });
+
+
 
         loadActivitiesFromDb();
     }

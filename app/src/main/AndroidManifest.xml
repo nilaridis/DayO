@@ -13,51 +13,44 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DayO"
         tools:targetApi="31">
-
-
-
-
+        <activity
+            android:name=".ui.FiltersActivity"
+            android:exported="false" />
         <!-- SignUpActivity ως Αρχική Σελίδα -->
         <activity
             android:name=".ui.SignUpActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".ui.LoginActivity"
             android:exported="true"
-            android:label="@string/title_activity_login" />
-
-        <!-- MainActivity -->
+            android:label="@string/title_activity_login" /> <!-- MainActivity -->
         <activity
             android:name=".ui.MainActivity"
             android:exported="true" />
         <activity
             android:name=".ui.SearchActivity"
-            android:exported="true"/>
-
+            android:exported="true" />
         <activity
             android:name=".ui.ProfileActivity"
-            android:exported="true"/>
-
+            android:exported="true" />
         <activity
             android:name=".ui.NotificationsActivity"
-            android:exported="true"/>
-
+            android:exported="true" />
         <activity
             android:name=".ui.BaseActivity"
-            android:exported="true"/>
-
+            android:exported="true" />
         <activity
             android:name=".ui.MatchActivity"
-            android:exported="true"/>
-
+            android:exported="true" />
         <activity
             android:name=".ui.UpcomingActivity"
-            android:exported="true"/>
+            android:exported="true" />
     </application>
 
 </manifest>
