@@ -31,6 +31,7 @@ public class SearchActivity extends BaseActivity {
     private List<Activity> activitiesList = new ArrayList<>();
     private EditText searchEditText;
     private LinearLayout searchBarContainer;
+    private String category;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +46,8 @@ public class SearchActivity extends BaseActivity {
 
         searchEditText = findViewById(R.id.search);
         searchBarContainer = findViewById(R.id.searchBarContainer);
+        // Get the category from the intent
+        category = getIntent().getStringExtra("CATEGORY");
 
         // OnClickListener για το LinearLayout (για να ανοίγει το πληκτρολόγιο)
         searchBarContainer.setOnClickListener(new View.OnClickListener() {
@@ -80,7 +83,17 @@ public class SearchActivity extends BaseActivity {
         ActivityDao activityDao = db.activityDao();
 
         AppDatabase.databaseWriteExecutor.execute(() -> {
-            List<Activity> fetchedActivities = activityDao.getAllActivities();
+            List<Activity> fetchedActivities;
+            if (category != null && !category.isEmpty()) {
+                // Load activities by category
+                fetchedActivities = activityDao.getActivitiesByCategory(category);
+                Log.d("SearchActivity", "Fetched activities for category: " + category);
+            } else {
+                // Load all activities
+                fetchedActivities = activityDao.getAllActivities();
+                Log.d("SearchActivity", "Fetched all activities");
+            }
+
 
             runOnUiThread(() -> {
                 if (fetchedActivities != null && !fetchedActivities.isEmpty()) {
