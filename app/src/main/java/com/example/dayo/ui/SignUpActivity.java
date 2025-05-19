@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.content.Intent;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,12 +22,14 @@ public class SignUpActivity extends AppCompatActivity {
         EditText emailEditText = findViewById(R.id.et_email);
         EditText passwordEditText = findViewById(R.id.et_password);
         EditText nameEditText = findViewById(R.id.et_username);
+        Spinner categorySpinner = findViewById(R.id.spinner_preferences);
         Button signUpButton = findViewById(R.id.btn_create_account);
 
         signUpButton.setOnClickListener(v -> {
             String email = emailEditText.getText().toString().trim();
             String password = passwordEditText.getText().toString().trim();
             String username = nameEditText.getText().toString().trim();
+            String category = categorySpinner.getSelectedItem().toString();
 
             if (email.isEmpty() || password.isEmpty() || username.isEmpty()) {
                 Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
@@ -47,6 +50,7 @@ public class SignUpActivity extends AppCompatActivity {
                         newUser.setEmail(email);
                         newUser.setPassword(password);
                         newUser.setName(username);
+                        newUser.setCategory(category);
 
                         DatabaseInstance.getInstance(this).userDao().insertUser(newUser);
 

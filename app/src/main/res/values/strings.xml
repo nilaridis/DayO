@@ -13,10 +13,10 @@
     <string name="title_activity_profile">ProfileActivity</string>
     <string name="title_activity_main2">MainActivity2</string>
     <string-array name="categories">
-        <item>Everything</item>
-        <item>Live Music</item>
-        <item>Nature &amp; Outdoors</item>
-        <item>Art &amp; Culture</item>
-        <item>Adrenaline Rush</item>
+        <item>EVERYTHING</item>
+        <item>LIVE_MUSIC</item>
+        <item>NATURE_OUTDOORS</item>
+        <item>ART_CULTURE</item>
+        <item>ADRENALINE_RUSH</item>
     </string-array>
 </resources>

@@ -1,16 +1,34 @@
 package com.example.dayo.ui;
 
+import static com.example.dayo.ui.UserSessionHelper.getLoggedInUserId;
+
 import android.content.Intent;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.dayo.R;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.dayo.R;
+import com.example.dayo.data.database.Activity;
+import com.example.dayo.data.database.ActivityDao;
+import com.example.dayo.data.database.AppDatabase;
+import com.example.dayo.data.database.DatabaseInstance;
+import com.example.dayo.data.database.User;
+import com.example.dayo.data.database.UserDao;
+
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Random;
+import java.util.concurrent.Executors;
 
 
 public class MainActivity extends BaseActivity {
@@ -26,6 +44,48 @@ public class MainActivity extends BaseActivity {
         String massage = getGreetingMessage();
         welcomeText.setText(massage);
 
+        RecyclerView recyclerViewPicked = findViewById(R.id.recyclerViewPicked);
+        recyclerViewPicked.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        ActivityAdapter pickedAdapter = new ActivityAdapter(this, new ArrayList<>());
+        recyclerViewPicked.setAdapter(pickedAdapter);
+
+
+        Executors.newSingleThreadExecutor().execute(() -> {
+            int userId = UserSessionHelper.getLoggedInUserId(this);
+            Log.d("MAIN", "userId: " + userId);
+            if (userId == -1) {
+                Log.d("MAIN", "No userId, returning");
+                return;
+            }
+            User user = DatabaseInstance.getInstance(getApplicationContext()).userDao().getUserById(userId);
+            Log.d("MAIN", "user: " + (user != null ? user.getName() : "null"));
+            if (user == null) {
+                Log.d("MAIN", "No user, returning");
+                return;
+            }
+            String category = user.getCategory();
+            Log.d("MAIN", "user category: " + category);
+            List<Activity> acts;
+            if ("EVERYTHING".equalsIgnoreCase(category)) {
+                acts = DatabaseInstance.getInstance(getApplicationContext()).activityDao().getAllActivities();
+            } else {
+                acts = DatabaseInstance.getInstance(getApplicationContext()).activityDao().getActivitiesByCategory(category);
+            }
+            Log.d("MAIN", "acts size: " + (acts != null ? acts.size() : "null"));
+            if (acts == null || acts.isEmpty()) {
+                Log.d("MAIN", "No acts, returning");
+                return;
+            }
+            Activity randomActivity = acts.get(new Random().nextInt(acts.size()));
+            List<Activity> pickedList = new ArrayList<>();
+            pickedList.add(randomActivity);
+
+            runOnUiThread(() -> {
+                Log.d("MAIN", "activities found: " + pickedList.size());
+                pickedAdapter.setActivities(pickedList);
+            });
+        });
+
         ImageButton btnLiveMusic = findViewById(R.id.btnLiveMusic);
         ImageButton btnNatureOutdoors = findViewById(R.id.btnNatureOutdoors);
         ImageButton btnArtsCulture = findViewById(R.id.btnArtCulture);
@@ -36,7 +96,9 @@ public class MainActivity extends BaseActivity {
         btnNatureOutdoors.setOnClickListener(v -> openSearchActivity("NATURE_OUTDOORS"));
         btnArtsCulture.setOnClickListener(v -> openSearchActivity("ART_CULTURE"));
         btnAdrenalineRush.setOnClickListener(v -> openSearchActivity("ADRENALINE_RUSH"));
+
     }
+
     private String getGreetingMessage() {
         Calendar calendar = Calendar.getInstance();
         int hour = calendar.get(Calendar.HOUR_OF_DAY);
