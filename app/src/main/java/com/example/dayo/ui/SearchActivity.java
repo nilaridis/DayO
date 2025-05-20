@@ -12,6 +12,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -34,6 +36,12 @@ public class SearchActivity extends BaseActivity {
     private EditText searchEditText;
     private LinearLayout searchBarContainer;
     private String category;
+    private ActivityResultLauncher<Intent> filtersLauncher;
+    private double budgetFrom = 0, budgetTo = Double.MAX_VALUE;
+    private int durationFrom = 0, durationTo = Integer.MAX_VALUE;
+    private List<String> filterCategories = new ArrayList<>();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,11 +86,27 @@ public class SearchActivity extends BaseActivity {
             }
         });
 
+        filtersLauncher = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if (result.getResultCode() == RESULT_OK && result.getData() != null) {
+                        budgetFrom = result.getData().getDoubleExtra("budgetFrom", 0);
+                        budgetTo = result.getData().getDoubleExtra("budgetTo", Double.MAX_VALUE);
+                        durationFrom = result.getData().getIntExtra("durationFrom", 0);
+                        durationTo = result.getData().getIntExtra("durationTo", Integer.MAX_VALUE);
+                        filterCategories = result.getData().getStringArrayListExtra("categories");
+                        filterActivities(searchEditText.getText().toString());
+                    }
+                }
+        );
+
         // Set OnClickListener for ntbFilters
         btnFilters.setOnClickListener(v ->{
             Intent intent = new Intent(SearchActivity.this , FiltersActivity.class);
-            startActivity(intent);
+            filtersLauncher.launch(intent);
         });
+
+
 
 
 
@@ -124,11 +148,18 @@ public class SearchActivity extends BaseActivity {
 
         List<Activity> filteredList = activitiesList.stream()
                 .filter(activity ->
-                        activity.getName().toLowerCase().contains(searchTextTrimmed.toLowerCase()) ||
+                        (activity.getName().toLowerCase().contains(searchTextTrimmed.toLowerCase()) ||
                                 activity.getLocation().toLowerCase().contains(searchTextTrimmed.toLowerCase()) ||
-                                activity.getDescription().toLowerCase().contains(searchTextTrimmed.toLowerCase())
+                                activity.getDescription().toLowerCase().contains(searchTextTrimmed.toLowerCase()))
+                                // Φίλτρο budget
+                                && activity.getPrice() >= budgetFrom && activity.getPrice() <= budgetTo
+                                // Φίλτρο duration
+                                && activity.getDuration() >= durationFrom && activity.getDuration() <= durationTo
+                                // Φίλτρο κατηγορίας (αν επιλεγεί κάποια)
+                                && (filterCategories.isEmpty() || filterCategories.contains(activity.getCategory()))
                 )
                 .collect(Collectors.toList());
+
         activityAdapter.setActivities(filteredList);
         activityAdapter.notifyDataSetChanged();
     }
