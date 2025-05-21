@@ -20,10 +20,12 @@ public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.Activi
 
     private List<Activity> activityList;
     private Context context;
+    private OnMoreInfoClickListener listener;
 
-    public ActivityAdapter(Context context, List<Activity> activityList) {
+    public ActivityAdapter(Context context, List<Activity> activityList, OnMoreInfoClickListener listener) {
         this.context = context;
         this.activityList = activityList != null ? activityList : new ArrayList<>();
+        this.listener = listener;
     }
 
     @NonNull
@@ -63,9 +65,11 @@ public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.Activi
         }
 
         // TODO: Πρόσθεσε OnClickListener για το holder.bookNowButton αν χρειάζεται
-        // holder.bookNowButton.setOnClickListener(v -> {
-        //     // Λογική για κλικ στο κουμπί
-        // });
+        holder.bookNowButton.setOnClickListener(v -> {
+            if (listener != null) {
+                listener.onMoreInfoClick(currentActivity);
+            }
+        });
     }
 
     @Override

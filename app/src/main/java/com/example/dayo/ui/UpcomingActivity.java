@@ -1,4 +1,5 @@
 package com.example.dayo.ui;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -30,7 +31,18 @@ public class UpcomingActivity extends BaseActivity {
         recyclerViewActivities.setLayoutManager(new LinearLayoutManager(this));
 
         // Initialize the adapter with an empty list initially
-        activityAdapter = new ActivityAdapter(this, activitiesList);
+        activityAdapter = new ActivityAdapter(
+                this,
+                activitiesList,
+                new OnMoreInfoClickListener() {
+                    @Override
+                    public void onMoreInfoClick(Activity activity) {
+                        Intent intent = new Intent(UpcomingActivity.this, ActivityInfoActivity.class);
+                        intent.putExtra("ACTIVITY_ID", activity.getId());
+                        startActivity(intent);
+                    }
+                }
+        );
         recyclerViewActivities.setAdapter(activityAdapter);
 
         // Ensure this is only called once

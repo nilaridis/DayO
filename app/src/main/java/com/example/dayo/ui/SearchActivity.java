@@ -52,7 +52,18 @@ public class SearchActivity extends BaseActivity {
         recyclerViewActivities = findViewById(R.id.recyclerViewActivities);
         ImageButton btnFilters = findViewById(R.id.btnFilters);
         recyclerViewActivities.setLayoutManager(new LinearLayoutManager(this));
-        activityAdapter = new ActivityAdapter(this, activitiesList);
+        activityAdapter = new ActivityAdapter(
+                this,
+                activitiesList,
+                new OnMoreInfoClickListener() {
+                    @Override
+                    public void onMoreInfoClick(Activity activity) {
+                        Intent intent = new Intent(SearchActivity.this, ActivityInfoActivity.class);
+                        intent.putExtra("ACTIVITY_ID", activity.getId());
+                        startActivity(intent);
+                    }
+                }
+        );
         recyclerViewActivities.setAdapter(activityAdapter);
 
         searchEditText = findViewById(R.id.search);
