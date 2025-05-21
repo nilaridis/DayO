@@ -1,6 +1,7 @@
 package com.example.dayo.ui;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -41,7 +42,18 @@ public class SearchActivity extends BaseActivity {
 
         recyclerViewActivities = findViewById(R.id.recyclerViewActivities);
         recyclerViewActivities.setLayoutManager(new LinearLayoutManager(this));
-        activityAdapter = new ActivityAdapter(this, activitiesList);
+        activityAdapter = new ActivityAdapter(
+                this,
+                activitiesList,
+                new OnMoreInfoClickListener() {
+                    @Override
+                    public void onMoreInfoClick(Activity activity) {
+                        Intent intent = new Intent(SearchActivity.this, ActivityInfoActivity.class);
+                        intent.putExtra("ACTIVITY_ID", activity.getId());
+                        startActivity(intent);
+                    }
+                }
+        );
         recyclerViewActivities.setAdapter(activityAdapter);
 
         searchEditText = findViewById(R.id.search);

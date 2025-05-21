@@ -46,7 +46,19 @@ public class MainActivity extends BaseActivity {
 
         RecyclerView recyclerViewPicked = findViewById(R.id.recyclerViewPicked);
         recyclerViewPicked.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        ActivityAdapter pickedAdapter = new ActivityAdapter(this, new ArrayList<>());
+        ActivityAdapter pickedAdapter = new ActivityAdapter(
+                this,
+                new ArrayList<>(),
+                new OnMoreInfoClickListener() {
+                    @Override
+                    public void onMoreInfoClick(Activity activity) {
+                        // Εδώ βάζεις τι να κάνει όταν πατιέται το κουμπί More Info
+                        Intent intent = new Intent(MainActivity.this, ActivityInfoActivity.class);
+                        intent.putExtra("ACTIVITY_ID", activity.getId());
+                        startActivity(intent);
+                    }
+                }
+        );
         recyclerViewPicked.setAdapter(pickedAdapter);
 
 

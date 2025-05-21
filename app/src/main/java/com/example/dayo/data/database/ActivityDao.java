@@ -36,6 +36,9 @@ public interface ActivityDao {
 
     @Query("SELECT * FROM activities WHERE is_upcoming = 1")
     List<Activity> getUpcomingActivities();
+
+    @Query("SELECT * FROM activities WHERE id = :id LIMIT 1")
+    Activity getActivityById(int id);
 //
 //    @Query("SELECT * FROM activities ORDER BY RANDOM() LIMIT 1")
 //    Activity getRandomActivity();

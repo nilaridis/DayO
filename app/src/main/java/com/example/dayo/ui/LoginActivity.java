@@ -11,7 +11,7 @@ import com.example.dayo.R;
 import com.example.dayo.data.database.DatabaseInstance;
 import com.example.dayo.data.database.User;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

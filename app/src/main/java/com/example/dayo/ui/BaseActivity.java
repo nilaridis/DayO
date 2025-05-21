@@ -1,6 +1,8 @@
 package com.example.dayo.ui;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageButton;
@@ -15,6 +17,10 @@ public class BaseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d("BaseActivity", "onCreate called in BaseActivity");
+
+        if (!isTablet()) {
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        }
     }
 
     protected void setupHeaderAndNavbar() {
@@ -95,6 +101,12 @@ public class BaseActivity extends AppCompatActivity {
         }
 
 
+    }
+
+    private boolean isTablet() {
+        return (getResources().getConfiguration().screenLayout
+                & Configuration.SCREENLAYOUT_SIZE_MASK)
+                >= Configuration.SCREENLAYOUT_SIZE_LARGE;
     }
 }
 

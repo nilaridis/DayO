@@ -12,7 +12,7 @@ import com.example.dayo.R;
 import com.example.dayo.data.database.DatabaseInstance;
 import com.example.dayo.data.database.User;
 
-public class SignUpActivity extends AppCompatActivity {
+public class SignUpActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

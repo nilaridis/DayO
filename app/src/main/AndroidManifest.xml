@@ -58,6 +58,11 @@
         <activity
             android:name=".ui.UpcomingActivity"
             android:exported="true"/>
+
+        <activity
+            android:name=".ui.ActivityInfoActivity"
+            android:exported="true"/>
+
     </application>
 
 </manifest>
