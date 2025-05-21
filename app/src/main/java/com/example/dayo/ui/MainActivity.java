@@ -117,7 +117,7 @@ public class MainActivity extends BaseActivity {
         Random random = new Random();
         String[] messages;
 
-        if (hour >= 0 && hour < 10 ){
+        if (hour >= 7 && hour < 12 ){
             messages = new String[]{
                     "Ready to try something new today?",
                     "A new day, a new adventure",
@@ -131,14 +131,22 @@ public class MainActivity extends BaseActivity {
                     "Need a plan for the day? We’ve got ideas.",
                     "Let’s find something spontaneous to do"
             };
-        } else {
+        } else if (hour >=17 && hour<23) {
             messages = new String[] {
                     "Make today count - try something different!",
                     "No plans ? No problem .",
                     "Evenings are for unforgettable experiences",
                     "Who said the day is over ?"
             };
-        }
+        } else{
+            messages = new String[] {
+                    "The city wakes up with you.",
+                    "Start your day inspired!",
+                    "The night is still young – planning an early adventure?",
+                    "No matter the hour, there’s always something new to discover."
+            };
+            }
+
         int index = random.nextInt(messages.length);
         return messages [index];
     }
