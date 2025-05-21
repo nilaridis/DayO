@@ -7,7 +7,10 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-import androidx.appcompat.app.AppCompatActivity;
+import android.util.Patterns;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
+
 import com.example.dayo.R;
 import com.example.dayo.data.database.DatabaseInstance;
 import com.example.dayo.data.database.User;
@@ -25,6 +28,26 @@ public class SignUpActivity extends BaseActivity {
         Spinner categorySpinner = findViewById(R.id.spinner_preferences);
         Button signUpButton = findViewById(R.id.btn_create_account);
 
+        // Βρες το toggle TextView
+        TextView togglePassword = findViewById(R.id.tv_toggle_password);
+        final boolean[] isPasswordVisible = {false};
+        togglePassword.setOnClickListener(v -> {
+            if (isPasswordVisible[0]) {
+                // Κρύψε το password
+                passwordEditText.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                togglePassword.setText("Show");
+                isPasswordVisible[0] = false;
+            } else {
+                // Δείξε το password
+                passwordEditText.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                togglePassword.setText("Hide");
+                isPasswordVisible[0] = true;
+            }
+            // Κράτησε τον κέρσορα στο τέλος
+            passwordEditText.setSelection(passwordEditText.length());
+        });
+
+
         signUpButton.setOnClickListener(v -> {
             String email = emailEditText.getText().toString().trim();
             String password = passwordEditText.getText().toString().trim();
@@ -33,6 +56,11 @@ public class SignUpActivity extends BaseActivity {
 
             if (email.isEmpty() || password.isEmpty() || username.isEmpty()) {
                 Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            // ΕΛΕΓΧΟΣ ΕΓΚΥΡΟΥ EMAIL με Patterns
+            if (!isValidEmail(email)) {
+                Toast.makeText(this, "Please enter a valid email address", Toast.LENGTH_SHORT).show();
                 return;
             }
 
@@ -76,7 +104,9 @@ public class SignUpActivity extends BaseActivity {
             startActivity(intent);
         });
 
-
-        // Εδώ μπορείς να προσθέσεις τη λογική για την εγγραφή
+    }
+    // Χρησιμοποιεί το Patterns για έλεγχο εγκυρότητας email
+    private boolean isValidEmail(String email) {
+        return Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
 }
