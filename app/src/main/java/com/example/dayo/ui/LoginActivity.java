@@ -6,7 +6,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-import androidx.appcompat.app.AppCompatActivity;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
+
 import com.example.dayo.R;
 import com.example.dayo.data.database.DatabaseInstance;
 import com.example.dayo.data.database.User;
@@ -22,6 +24,29 @@ public class LoginActivity extends BaseActivity {
         EditText passwordEditText = findViewById(R.id.et_password);
         Button loginButton = findViewById(R.id.btn_login);
         TextView signUp = findViewById(R.id.link_sign_up);
+
+        // Βρες το toggle TextView
+        TextView togglePassword = findViewById(R.id.tv_toggle_password);
+
+        // Flag για την κατάσταση του password
+        final boolean[] isPasswordVisible = {false};
+
+        // Toggle password εμφάνιση/απόκρυψη
+        togglePassword.setOnClickListener(v -> {
+            if (isPasswordVisible[0]) {
+                // Κρύψε το password
+                passwordEditText.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                togglePassword.setText("Show");
+                isPasswordVisible[0] = false;
+            } else {
+                // Δείξε το password
+                passwordEditText.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                togglePassword.setText("Hide");
+                isPasswordVisible[0] = true;
+            }
+            // Κράτησε τον κέρσορα στο τέλος
+            passwordEditText.setSelection(passwordEditText.length());
+        });
 
         loginButton.setOnClickListener(v -> {
             String email = usernameEditText.getText().toString().trim();

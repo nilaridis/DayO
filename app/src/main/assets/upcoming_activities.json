@@ -21,14 +21,25 @@
     "imageName": "heptapyrgion_festival"
   },
   {
-    "name": "Jag Panzer & Raven Concert",
+    "name": "Thessaloniki AirSea Show",
+    "category": "ART_CULTURE",
+    "description": "A spectacular airshow featuring aircraft, helicopters, and parachutists from across Europe and the Middle East.",
+    "location": "Thessaloniki Harbor",
+    "pricePerPerson": 0.0 ,
+    "duration": 240,
+    "date" : "2025-07",
+    "imageName": "airsea_show"
+  },
+
+  {
+    "name": "Moni Lazariston Festival",
     "category": "LIVE_MUSIC",
-    "description": "Live performance by legendary metal bands.",
-    "location": "Eightball Club, Thessaloniki",
-    "pricePerPerson": 20.0,
-    "duration": 180,
-    "date" : "2025-09",
-    "imageName": "jag_panzer_raven_concert"
+    "description": "A diverse arts festival hosting a range of performances from world music to rock & roll.",
+    "location": "Thessaloniki Lazaristes Monastery",
+    "pricePerPerson": 12.0 ,
+    "duration": 240,
+    "date" : "2025-07",
+    "imageName": "moni_lazariston_festival"
   },
   {
     "name": "August Full Moon Events",
@@ -39,6 +50,26 @@
     "duration": 240,
     "date" : "2025-08",
     "imageName": "august_full_moon"
+  },
+  {
+    "name": "White Water Rafting in Axios River",
+    "category": "ADRENALINE_RUSH",
+    "description": "Navigate the rapids of the Axios River with experienced guides.",
+    "location": "Axios River (Near Thessaloniki)",
+    "pricePerPerson": 50.0 ,
+    "duration": 240,
+    "date" : "2025-08",
+    "imageName": "rafting_axios"
+  },
+  {
+    "name": "Jag Panzer & Raven Concert",
+    "category": "LIVE_MUSIC",
+    "description": "Live performance by legendary metal bands.",
+    "location": "Eightball Club, Thessaloniki",
+    "pricePerPerson": 20.0,
+    "duration": 180,
+    "date" : "2025-09",
+    "imageName": "jag_panzer_raven_concert"
   },
   {
     "name": "Thessaloniki International Fair",
@@ -91,35 +122,6 @@
     "duration": 240,
     "date" : "2025-09",
     "imageName": "climbing_hortiatis"
-  },
-  {
-    "name": "White Water Rafting in Axios River",
-    "category": "ADRENALINE_RUSH",
-    "description": "Navigate the rapids of the Axios River with experienced guides.",
-    "location": "Axios River (Near Thessaloniki)",
-    "pricePerPerson": 50.0 ,
-    "duration": 240,
-    "date" : "2025-08",
-    "imageName": "rafting_axios"
-  },
-  {
-    "name": "Thessaloniki AirSea Show",
-    "category": "ART_CULTURE",
-    "description": "A spectacular airshow featuring aircraft, helicopters, and parachutists from across Europe and the Middle East.",
-    "location": "Thessaloniki Harbor",
-    "pricePerPerson": 0.0 ,
-    "duration": 240,
-    "date" : "2025-07",
-    "imageName": "airsea_show"
-  },
-  {
-    "name": "Moni Lazariston Festival",
-    "category": "LIVE_MUSIC",
-    "description": "A diverse arts festival hosting a range of performances from world music to rock & roll.",
-    "location": "Thessaloniki Lazaristes Monastery",
-    "pricePerPerson": 12.0 ,
-    "duration": 240,
-    "date" : "2025-07",
-    "imageName": "moni_lazariston_festival"
   }
-]
+  ]
+
