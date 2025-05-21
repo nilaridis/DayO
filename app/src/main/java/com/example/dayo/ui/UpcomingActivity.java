@@ -23,10 +23,10 @@ public class UpcomingActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search);
+        setContentView(R.layout.activity_upcoming_events);
         setupHeaderAndNavbar();
 
-        recyclerViewActivities = findViewById(R.id.recyclerViewActivities);
+        recyclerViewActivities = findViewById(R.id.recyclerViewUpcoming);
         recyclerViewActivities.setLayoutManager(new LinearLayoutManager(this));
 
         // Initialize the adapter with an empty list initially

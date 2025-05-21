@@ -1,82 +1,125 @@
 [
-  {
-    "name": "Boat Cruise",
-    "category": "NATURE_OUTDOORS",
-    "description": "Cruise the Thermaic Gulf and enjoy freshly cooked seafood on board.",
-    "location": "Thessaloniki Port",
-    "pricePerPerson": 55.0,
-    "duration": 180
-  },
+
   {
     "name": "Museum Day Pass",
     "category": "ART_CULTURE",
     "description": "Access multiple top museums in Thessaloniki with one guided itinerary.",
     "location": "City Center",
     "pricePerPerson": 30.0,
-    "duration": 240
+    "duration": 240,
+    "date" : "2025-06",
+    "imageName": "museum_visit"
   },
   {
-    "name": "Thessaloniki Bike Tour",
-    "category": "NATURE_OUTDOORS",
-    "description": "Cycle along the coast and through historic neighborhoods with a friendly local guide.",
-    "location": "Thessaloniki Waterfront",
-    "pricePerPerson": 18.0,
-    "duration": 120
-  },
-  {
-    "name": "Sunset Sailing Experience",
-    "category": "NATURE_OUTDOORS",
-    "description": "Enjoy a relaxing evening on the Thermaic Gulf with a glass of wine and stunning sunset views.",
-    "location": "Thessaloniki Marina",
-    "pricePerPerson": 45.0,
-    "duration": 150
-  },
-  {
-    "name": "Castle Walls Sunset Tour",
-    "category": "NATURE_OUTDOORS",
-    "description": "Walk along the ancient castle walls of Ano Poli and watch the sun set over the city and sea.",
-    "location": "Heptapyrgion, Ano Poli",
-    "pricePerPerson": 18.0,
-    "duration": 90
-  },
-  {
-    "name": "Greek Mythology Storytelling Tour",
-    "category": "ART_CULTURE",
-    "description": "Discover the myths and legends of ancient Greece in an engaging walking tour.",
-    "location": "Thessaloniki City Center",
-    "pricePerPerson": 22.0,
-    "duration": 90
-  },
-  {
-    "name": "Boat Tour to Peraia Beach",
-    "category": "NATURE_OUTDOORS",
-    "description": "Cruise across the bay and spend a few hours relaxing at the sandy beach of Peraia.",
-    "location": "Thessaloniki Port",
-    "pricePerPerson": 35.0,
-    "duration": 240
-  },
-  {
-    "name": "Aristotle Square Historical Tour",
-    "category": "ART_CULTURE",
-    "description": "Discover the architectural and cultural significance of Thessaloniki’s main square.",
-    "location": "Aristotelous Square",
-    "pricePerPerson": 10.0,
-    "duration": 60
-  },
-  {
-    "name": "Rock & Blues Night at Local Pub",
+    "name": "Heptapyrgion Festival",
     "category": "LIVE_MUSIC",
-    "description": "Enjoy live rock and blues in one of Thessaloniki’s most iconic underground pubs.",
-    "location": "Ladadika Rock Bar",
+    "description": "A series of music and theater performances in the historic Heptapyrgion fortress.",
+    "location": "Heptapyrgion, Thessaloniki",
     "pricePerPerson": 10.0,
-    "duration": 150
+    "duration": 240,
+    "date" : "2025-07",
+    "imageName": "heptapyrgion_festival"
   },
   {
-    "name": "Café Live: Singer-Songwriter Sessions",
+    "name": "Jag Panzer & Raven Concert",
     "category": "LIVE_MUSIC",
-    "description": "Unplug and relax with live acoustic sets by rising local singer-songwriters.",
-    "location": "Navarinou Café Scene",
-    "pricePerPerson": 12.0,
-    "duration": 90
+    "description": "Live performance by legendary metal bands.",
+    "location": "Eightball Club, Thessaloniki",
+    "pricePerPerson": 20.0,
+    "duration": 180,
+    "date" : "2025-09",
+    "imageName": "jag_panzer_raven_concert"
+  },
+  {
+    "name": "August Full Moon Events",
+    "category": "NATURE_OUTDOORS",
+    "description": "Cultural events including concerts and performances under the August full moon.",
+    "location": "Various archaeological sites in Thessaloniki",
+    "pricePerPerson": 0.0,
+    "duration": 240,
+    "date" : "2025-08",
+    "imageName": "august_full_moon"
+  },
+  {
+    "name": "Thessaloniki International Fair",
+    "category": "ART_CULTURE",
+    "description": "An international exhibition featuring commerce, culture, and entertainment.",
+    "location": "HELEXPO Fair Grounds, Thessaloniki",
+    "pricePerPerson": 12.0 ,
+    "duration": 240,
+    "date" : "2025-09",
+    "imageName": "tif"
+  },
+  {
+    "name": "Street Mode Festival",
+    "category": "ART_CULTURE",
+    "description": "A festival celebrating street culture with music, graffiti, dance, and extreme sports.",
+    "location": "Sonik Arena, Thermi, Thessaloniki",
+    "pricePerPerson": 20.0 ,
+    "duration": 240,
+    "date" : "2025-09",
+    "imageName": "street_mode_festival"
+
+  },
+  {
+    "name": "Street Mode Festival – Extreme Sports",
+    "category": "ADRENALINE_RUSH",
+    "description": "Participate in BMX, skateboarding, and parkour events during the festival.",
+    "location": "Sonik Arena, Thermi, Thessaloniki",
+    "pricePerPerson": 50.0 ,
+    "duration": 240,
+    "date" : "2025-09",
+    "imageName": "street_mode_festival"
+
+  },
+  {
+    "name": "Thessaloniki Day of Colors",
+    "category": "ADRENALINE_RUSH",
+    "description": "City parks or sports venues. Inspired by Holi, involves paint fights, dancing, and sports.",
+    "location": " Kalamaria , Thessaloniki",
+    "pricePerPerson": 15.0 ,
+    "duration": 240,
+    "date" : "2025-09",
+    "imageName": "thessaloniki_day_of_colors"
+  },
+  {
+    "name": "Rock Climbing at Red Rock",
+    "category": "ADRENALINE_RUSH",
+    "description": "Experience outdoor rock climbing suitable for various skill levels.",
+    "location": "Red Rock Climbing Center, Thessaloniki",
+    "pricePerPerson": 30.0 ,
+    "duration": 240,
+    "date" : "2025-09",
+    "imageName": "climbing_hortiatis"
+  },
+  {
+    "name": "White Water Rafting in Axios River",
+    "category": "ADRENALINE_RUSH",
+    "description": "Navigate the rapids of the Axios River with experienced guides.",
+    "location": "Axios River (Near Thessaloniki)",
+    "pricePerPerson": 50.0 ,
+    "duration": 240,
+    "date" : "2025-08",
+    "imageName": "rafting_axios"
+  },
+  {
+    "name": "Thessaloniki AirSea Show",
+    "category": "ART_CULTURE",
+    "description": "A spectacular airshow featuring aircraft, helicopters, and parachutists from across Europe and the Middle East.",
+    "location": "Thessaloniki Harbor",
+    "pricePerPerson": 0.0 ,
+    "duration": 240,
+    "date" : "2025-07",
+    "imageName": "airsea_show"
+  },
+  {
+    "name": "Moni Lazariston Festival",
+    "category": "LIVE_MUSIC",
+    "description": "A diverse arts festival hosting a range of performances from world music to rock & roll.",
+    "location": "Thessaloniki Lazaristes Monastery",
+    "pricePerPerson": 12.0 ,
+    "duration": 240,
+    "date" : "2025-07",
+    "imageName": "moni_lazariston_festival"
   }
 ]
