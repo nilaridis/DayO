@@ -68,20 +68,17 @@ public class SearchActivity extends BaseActivity {
 
         searchEditText = findViewById(R.id.search);
         searchBarContainer = findViewById(R.id.searchBarContainer);
-        // Get the category from the intent
         category = getIntent().getStringExtra("CATEGORY");
 
-        // OnClickListener για το LinearLayout (για να ανοίγει το πληκτρολόγιο)
         searchBarContainer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 searchEditText.requestFocus();
                 InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-                imm.showSoftInput(searchEditText, InputMethodManager.SHOW_IMPLICIT); // Άνοιξε το πληκτρολόγιο
+                imm.showSoftInput(searchEditText, InputMethodManager.SHOW_IMPLICIT);
             }
         });
 
-        // TextWatcher για το EditText (για να φιλτράρει καθώς πληκτρολογεί ο χρήστης)
         searchEditText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -111,7 +108,6 @@ public class SearchActivity extends BaseActivity {
                 }
         );
 
-        // Set OnClickListener for ntbFilters
         btnFilters.setOnClickListener(v ->{
             Intent intent = new Intent(SearchActivity.this , FiltersActivity.class);
             filtersLauncher.launch(intent);
@@ -131,11 +127,9 @@ public class SearchActivity extends BaseActivity {
         AppDatabase.databaseWriteExecutor.execute(() -> {
             List<Activity> fetchedActivities;
             if (category != null && !category.isEmpty()) {
-                // Load activities by category
                 fetchedActivities = activityDao.getActivitiesByCategory(category);
                 Log.d("SearchActivity", "Fetched activities for category: " + category);
             } else {
-                // Load all activities
                 fetchedActivities = activityDao.getAllActivities();
                 Log.d("SearchActivity", "Fetched all activities");
             }
@@ -162,11 +156,8 @@ public class SearchActivity extends BaseActivity {
                         (activity.getName().toLowerCase().contains(searchTextTrimmed.toLowerCase()) ||
                                 activity.getLocation().toLowerCase().contains(searchTextTrimmed.toLowerCase()) ||
                                 activity.getDescription().toLowerCase().contains(searchTextTrimmed.toLowerCase()))
-                                // Φίλτρο budget
                                 && activity.getPrice() >= budgetFrom && activity.getPrice() <= budgetTo
-                                // Φίλτρο duration
                                 && activity.getDuration() >= durationFrom && activity.getDuration() <= durationTo
-                                // Φίλτρο κατηγορίας (αν επιλεγεί κάποια)
                                 && (filterCategories.isEmpty() || filterCategories.contains(activity.getCategory()))
                 )
                 .collect(Collectors.toList());

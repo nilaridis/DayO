@@ -16,7 +16,6 @@
         <activity
             android:name=".ui.FiltersActivity"
             android:exported="false" />
-        <!-- SignUpActivity ως Αρχική Σελίδα -->
         <activity
             android:name=".ui.SignUpActivity"
             android:exported="true">
@@ -29,7 +28,7 @@
         <activity
             android:name=".ui.LoginActivity"
             android:exported="true"
-            android:label="@string/title_activity_login" /> <!-- MainActivity -->
+            android:label="@string/title_activity_login" />
         <activity
             android:name=".ui.MainActivity"
             android:exported="true" />

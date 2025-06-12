@@ -20,7 +20,7 @@ android {
     }
 
     kotlinOptions {
-        jvmTarget = "11" // Θέσε το JVM target στην έκδοση 11
+        jvmTarget = "11"
     }
 
     buildTypes {
@@ -68,7 +68,7 @@ dependencies {
     // Room dependencies
     implementation("androidx.room:room-runtime:2.5.2")
     annotationProcessor("androidx.room:room-compiler:2.5.2")
-    implementation("androidx.room:room-ktx:2.5.2") // Για Coroutines
+    implementation("androidx.room:room-ktx:2.5.2")
 
     // Testing
     testImplementation(libs.junit)

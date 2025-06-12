@@ -10,6 +10,5 @@ public class NotificationsActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notifications);
         setupHeaderAndNavbar();
-        // Any additional logic for notifications can go here
     }
 }

@@ -25,26 +25,20 @@ public class LoginActivity extends BaseActivity {
         Button loginButton = findViewById(R.id.btn_login);
         TextView signUp = findViewById(R.id.link_sign_up);
 
-        // Βρες το toggle TextView
         TextView togglePassword = findViewById(R.id.tv_toggle_password);
 
-        // Flag για την κατάσταση του password
         final boolean[] isPasswordVisible = {false};
 
-        // Toggle password εμφάνιση/απόκρυψη
         togglePassword.setOnClickListener(v -> {
             if (isPasswordVisible[0]) {
-                // Κρύψε το password
                 passwordEditText.setTransformationMethod(PasswordTransformationMethod.getInstance());
                 togglePassword.setText("Show");
                 isPasswordVisible[0] = false;
             } else {
-                // Δείξε το password
                 passwordEditText.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
                 togglePassword.setText("Hide");
                 isPasswordVisible[0] = true;
             }
-            // Κράτησε τον κέρσορα στο τέλος
             passwordEditText.setSelection(passwordEditText.length());
         });
 
@@ -66,13 +60,10 @@ public class LoginActivity extends BaseActivity {
 
                     runOnUiThread(() -> {
                         if (user == null) {
-                            // Αν δεν υπάρχει χρήστης
                             Toast.makeText(this, "User does not exist. Please create an account.", Toast.LENGTH_SHORT).show();
                         } else if (!user.getPassword().equals(password)) {
-                            // Αν ο κωδικός είναι λάθος
                             Toast.makeText(this, "Incorrect password. Please try again.", Toast.LENGTH_SHORT).show();
                         } else {
-                            // Επιτυχής σύνδεση
                             getSharedPreferences("user_prefs", MODE_PRIVATE)
                                     .edit()
                                     .putInt("user_id", user.getId())
@@ -92,10 +83,6 @@ public class LoginActivity extends BaseActivity {
         });
 
 
-
-
-
-        //Αλλαγη οθονης σε Sign up
         signUp.setOnClickListener(v -> {
             Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
             startActivity(intent);

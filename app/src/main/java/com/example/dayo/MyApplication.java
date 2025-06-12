@@ -1,4 +1,4 @@
-package com.example.dayo; // Το βασικό package της εφαρμογής σου
+package com.example.dayo;
 
 
 import android.app.Application;
@@ -10,9 +10,6 @@ public class MyApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
-        // Κάλεσε εδώ τη μέθοδο για τη φόρτωση των δεδομένων από το JSON.
-        // Το 'this' εδώ αναφέρεται στο Application context.
         JsonDataLoader.loadActivitiesFromJson(this);
         JsonDataLoader.loadUpcomingActivitiesFromJson(this);
     }
