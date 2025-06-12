@@ -11,6 +11,6 @@ public class UserSessionHelper {
 
     public static void logout(Context context) {
         SharedPreferences prefs = context.getSharedPreferences("user_prefs", Context.MODE_PRIVATE);
-        prefs.edit().remove("userId").apply(); // ή prefs.edit().clear().apply(); για όλα
+        prefs.edit().remove("userId").apply();
     }
 }

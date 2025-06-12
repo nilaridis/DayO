@@ -42,29 +42,24 @@ public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.Activi
 
         holder.activityTitle.setText(currentActivity.getName());
         holder.activityLocation.setText(currentActivity.getLocation());
-        // Format price to show two decimal places and a euro or dollar sign
-        holder.activityPrice.setText(String.format(Locale.getDefault(), "%.2f€", currentActivity.getPrice())); // Ή $
+        holder.activityPrice.setText(String.format(Locale.getDefault(), "%.2f€", currentActivity.getPrice()));
         holder.activityDuration.setText(String.format(Locale.getDefault(), "%d minutes", currentActivity.getDuration()));
 
         String imageName = currentActivity.getImageName();
         if (imageName != null && !imageName.isEmpty()) {
-            // Το getIdentifier ψάχνει έναν πόρο με βάση το όνομα, τον τύπο ("drawable"), και το package.
             int imageResourceId = context.getResources().getIdentifier(imageName, "drawable", context.getPackageName());
 
-            if (imageResourceId != 0) { // Αν βρέθηκε το resource ID
+            if (imageResourceId != 0) {
                 holder.activityImage.setImageResource(imageResourceId);
             } else {
-                // Η εικόνα δεν βρέθηκε, βάλε ένα placeholder ή logαρε το σφάλμα
                 Log.w("ActivityAdapter", "Drawable resource not found for: " + imageName);
                 holder.activityImage.setImageResource(R.drawable.exampleimage);
             }
         } else {
-            // Δεν υπάρχει όνομα εικόνας, βάλε ένα placeholder
             Log.w("ActivityAdapter", "No image name");
-            holder.activityImage.setImageResource(R.drawable.exampleimage); // Βάλε μια default εικόνα
+            holder.activityImage.setImageResource(R.drawable.exampleimage);
         }
 
-        // TODO: Πρόσθεσε OnClickListener για το holder.bookNowButton αν χρειάζεται
         holder.bookNowButton.setOnClickListener(v -> {
             if (listener != null) {
                 listener.onMoreInfoClick(currentActivity);
@@ -79,7 +74,7 @@ public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.Activi
 
     public void setActivities(List<Activity> activities) {
         this.activityList = activities != null ? activities : new ArrayList<>();
-        notifyDataSetChanged(); // Ενημέρωσε το RecyclerView για τις αλλαγές
+        notifyDataSetChanged();
     }
 
     static class ActivityViewHolder extends RecyclerView.ViewHolder {
@@ -94,9 +89,9 @@ public class ActivityAdapter extends RecyclerView.Adapter<ActivityAdapter.Activi
             super(itemView);
             activityImage = itemView.findViewById(R.id.activityImage);
             activityTitle = itemView.findViewById(R.id.activityTitle);
-            activityLocation = itemView.findViewById(R.id.activitylocation); // Έλεγξε το ID, στο XML είναι activitylocation
-            activityPrice = itemView.findViewById(R.id.activitprice);     // Έλεγξε το ID, στο XML είναι activitprice
-            activityDuration = itemView.findViewById(R.id.activityduration); // Έλεγξε το ID, στο XML είναι activityduration
+            activityLocation = itemView.findViewById(R.id.activitylocation);
+            activityPrice = itemView.findViewById(R.id.activitprice);
+            activityDuration = itemView.findViewById(R.id.activityduration);
             bookNowButton = itemView.findViewById(R.id.bookNowButton);
         }
     }

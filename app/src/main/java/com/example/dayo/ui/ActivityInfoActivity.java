@@ -17,29 +17,25 @@ public class ActivityInfoActivity extends AppCompatActivity {
 
     private ImageView activityImage;
     private ImageView closeIcon;
-    private TextView activityTitle, activityLocation, activityPrice, activityDuration, labelDescription, activityDescription;
+    private TextView activityTitle, activityLocation, activityPrice, activityDuration, activityDescription;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_more_info); // το xml που ετοίμασες
+        setContentView(R.layout.activity_more_info);
 
-        // Βρες τα views
         activityImage = findViewById(R.id.activityImage);
         activityTitle = findViewById(R.id.activityTitle);
         activityLocation = findViewById(R.id.activityLocation);
         activityPrice = findViewById(R.id.activityPrice);
         activityDuration = findViewById(R.id.activityDuration);
-        labelDescription = findViewById(R.id.labelDescription);
         activityDescription = findViewById(R.id.activityDescription);
         closeIcon = findViewById(R.id.closeButton);
 
-        // Πάρε το ID από το Intent
         Intent intent = getIntent();
         int activityId = intent.getIntExtra("ACTIVITY_ID", -1);
 
         if (activityId != -1) {
-            // Φέρε τα δεδομένα από τη βάση σε background thread
             Executors.newSingleThreadExecutor().execute(() -> {
                 Activity activity = DatabaseInstance.getInstance(getApplicationContext())
                         .activityDao().getActivityById(activityId);
@@ -49,7 +45,6 @@ public class ActivityInfoActivity extends AppCompatActivity {
                 }
             });
         } else {
-            // Εμφάνισε μήνυμα λάθους ή τελείωσε το activity
             finish();
         }
         closeIcon.setOnClickListener(v -> finish());
@@ -68,7 +63,7 @@ public class ActivityInfoActivity extends AppCompatActivity {
             if (imageResId != 0) {
                 activityImage.setImageResource(imageResId);
             } else {
-                activityImage.setImageResource(R.drawable.exampleimage); // default εικόνα
+                activityImage.setImageResource(R.drawable.exampleimage);
             }
         } else {
             activityImage.setImageResource(R.drawable.exampleimage);

@@ -26,7 +26,6 @@ public class FiltersActivity extends AppCompatActivity {
         ImageView closeFilters = findViewById(R.id.close_filters);
         applyFiltersButton.setOnClickListener(v -> {
             Intent resultIntent = new Intent();
-            // Πάρε τιμές από τα πεδία
             double budgetFrom = 0, budgetTo = Double.MAX_VALUE;
             try {
                 String fromStr = ((EditText) findViewById(R.id.budget_from)).getText().toString();
@@ -45,7 +44,6 @@ public class FiltersActivity extends AppCompatActivity {
                 if (!toStr.isEmpty()) durationTo = Integer.parseInt(toStr);
             } catch (NumberFormatException ignored) {}
 
-            // Πάρε τις επιλεγμένες κατηγορίες
             ArrayList<String> categories = new ArrayList<>();
             if (((CheckBox) findViewById(R.id.category_live_music)).isChecked())
                 categories.add("LIVE_MUSIC");
@@ -56,7 +54,6 @@ public class FiltersActivity extends AppCompatActivity {
             if (((CheckBox) findViewById(R.id.adrenalineRush)).isChecked())
                 categories.add("ADRENALINE_RUSH");
 
-            // Βάλε τα φίλτρα στο Intent
             resultIntent.putExtra("budgetFrom", budgetFrom);
             resultIntent.putExtra("budgetTo", budgetTo);
             resultIntent.putExtra("durationFrom", durationFrom);

@@ -13,7 +13,6 @@ public class User {
     private String name;
     private String category;
 
-    // Getters και Setters
     public int getId() {
         return id;
     }

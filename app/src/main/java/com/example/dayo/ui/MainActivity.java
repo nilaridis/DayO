@@ -1,16 +1,10 @@
 package com.example.dayo.ui;
 
-import static com.example.dayo.ui.UserSessionHelper.getLoggedInUserId;
 
 import android.content.Intent;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.os.Bundle;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -18,11 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dayo.R;
 import com.example.dayo.data.database.Activity;
-import com.example.dayo.data.database.ActivityDao;
-import com.example.dayo.data.database.AppDatabase;
 import com.example.dayo.data.database.DatabaseInstance;
 import com.example.dayo.data.database.User;
-import com.example.dayo.data.database.UserDao;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -39,7 +30,6 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         setupHeaderAndNavbar();
 
-        // WELCOME MESSAGE
         TextView welcomeText = findViewById(R.id.welcomeText2);
         String massage = getGreetingMessage();
         welcomeText.setText(massage);
@@ -52,7 +42,6 @@ public class MainActivity extends BaseActivity {
                 new OnMoreInfoClickListener() {
                     @Override
                     public void onMoreInfoClick(Activity activity) {
-                        // Εδώ βάζεις τι να κάνει όταν πατιέται το κουμπί More Info
                         Intent intent = new Intent(MainActivity.this, ActivityInfoActivity.class);
                         intent.putExtra("ACTIVITY_ID", activity.getId());
                         startActivity(intent);
@@ -103,7 +92,6 @@ public class MainActivity extends BaseActivity {
         ImageButton btnArtsCulture = findViewById(R.id.btnArtCulture);
         ImageButton btnAdrenalineRush = findViewById(R.id.btnAdrenalineRush);
 
-        // Set onClickListeners for each button
         btnLiveMusic.setOnClickListener(v -> openSearchActivity("LIVE_MUSIC"));
         btnNatureOutdoors.setOnClickListener(v -> openSearchActivity("NATURE_OUTDOORS"));
         btnArtsCulture.setOnClickListener(v -> openSearchActivity("ART_CULTURE"));

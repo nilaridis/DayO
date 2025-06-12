@@ -35,7 +35,6 @@ public class BaseActivity extends AppCompatActivity {
             Log.e("BaseActivity", "Profile button is null");
         }
 
-        // Logo Button
         ImageView logoButton = findViewById(R.id.logoImage);
         if (logoButton != null) {
             logoButton.setOnClickListener(v -> {

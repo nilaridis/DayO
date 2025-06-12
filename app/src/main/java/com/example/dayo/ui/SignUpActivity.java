@@ -28,22 +28,18 @@ public class SignUpActivity extends BaseActivity {
         Spinner categorySpinner = findViewById(R.id.spinner_preferences);
         Button signUpButton = findViewById(R.id.btn_create_account);
 
-        // Βρες το toggle TextView
         TextView togglePassword = findViewById(R.id.tv_toggle_password);
         final boolean[] isPasswordVisible = {false};
         togglePassword.setOnClickListener(v -> {
             if (isPasswordVisible[0]) {
-                // Κρύψε το password
                 passwordEditText.setTransformationMethod(PasswordTransformationMethod.getInstance());
                 togglePassword.setText("Show");
                 isPasswordVisible[0] = false;
             } else {
-                // Δείξε το password
                 passwordEditText.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
                 togglePassword.setText("Hide");
                 isPasswordVisible[0] = true;
             }
-            // Κράτησε τον κέρσορα στο τέλος
             passwordEditText.setSelection(passwordEditText.length());
         });
 
@@ -58,7 +54,6 @@ public class SignUpActivity extends BaseActivity {
                 Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
                 return;
             }
-            // ΕΛΕΓΧΟΣ ΕΓΚΥΡΟΥ EMAIL με Patterns
             if (!isValidEmail(email)) {
                 Toast.makeText(this, "Please enter a valid email address", Toast.LENGTH_SHORT).show();
                 return;
@@ -66,7 +61,6 @@ public class SignUpActivity extends BaseActivity {
 
             new Thread(() -> {
                 try {
-                    // Εκτέλεση Query
                     User existingUser = DatabaseInstance.getInstance(this)
                             .userDao()
                             .getUserByEmailOrUsername(email, username);
@@ -90,7 +84,7 @@ public class SignUpActivity extends BaseActivity {
                         });
                     }
                 } catch (Exception e) {
-                    e.printStackTrace(); // Εκτύπωση λάθους για debugging
+                    e.printStackTrace();
                     runOnUiThread(() -> Toast.makeText(this, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show());
                 }
             }).start();
@@ -105,7 +99,6 @@ public class SignUpActivity extends BaseActivity {
         });
 
     }
-    // Χρησιμοποιεί το Patterns για έλεγχο εγκυρότητας email
     private boolean isValidEmail(String email) {
         return Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
